@@ -1,0 +1,66 @@
+body, h1,h2,h3,h4,h5,h6 {font-family: "gray", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: black;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px}
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+.container {
+	width: 100%;
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+}
+.background {
+color: black;
+
+}
+
+.font { 
+color: white;
+}
+
+.dvImage {
+	width: 100%;
+	height: auto;
+	margin-bottom: 20px;
+}
+
+.image {
+	width: 80%;
+	height: auto;
+	object-fit: none;
+	object-position: center;
+}
+
+.col-1 {
+	width: 80px;
+	float: left;
+	font-weight: bold;
+}
+
+.col-2 {
+	width: calc(100% - 80px);
+	float: left;
+}
+
+.clearBoth {
+	clear: both;
+}
+
+.price {
+	font-size: larger;
+	padding-bottom: 15px;
+}
+
+.lease {
+	font-size: larger;
+	padding-bottom: 15px;
+}
+
+.amenities {
+	font-size: larger;
+	padding-bottom: 15px;
+}
