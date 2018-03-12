@@ -30,7 +30,7 @@ body{
     <div class="col-sm-4"> </div>
 <div class="col-md-4">
 
-<h1 class="text-center text-success"> Register page</h1>
+<h1 class="text-center text-success">Register as a Tenant or Landlord</h1>
 <br/>
 
 <div class="col-sm-12">
@@ -38,10 +38,10 @@ body{
   <ul class="nav nav-pills" >
 
     <li class="" style="width:50%"><a class="btn btn-lg btn-default" data-toggle="tab" href="#home">Tenant</a></li>
-    <li class=" " style="width:49%"><a class=" btn btn-lg btn-default" data-toggle="tab" href="#menu1">Landlord</a></li>
+    <!--<li class=" " style="width:49%"><a class=" btn btn-lg btn-default" data-toggle="tab" href="#menu1">Landlord</a></li> -->
 
   </ul>
-  
+
   <div class="tab-content">
     <div id="home" class="tab-pane fade in active">
 
@@ -87,55 +87,13 @@ body{
 <?php
  }
 ?>
+      </div>
     </div>
-
-    <div id="menu1" class="tab-pane fade">
-
-</form>
-
-<?php
-  if (!isset($_SESSION['username'])) { ?>
-<?php
-  if (isset($_GET['register_action'])) {
-    if ($_GET['register_action'] == "success") { ?>
-      Successfully Registered!
-<?php
- }
-}
-?>
-  <center><form method="post" action="landlord/register-action.php">
-
-    <div class="form-group">
-      <label for="username">Username: </label>
-      <input type="text" class="form-control" id="email"  required>
-    </div>
-
-
-    <div class="form-group">
-      <label for="pwd">Password: </label>
-      <input type="password" class="form-control" id="pwd" required>
-    </div>
-
-    <button type="submit" class="btn btn-default">Register as Landlord</button>
-
-  </form>
-  <style>  input{
-   text-align:center;
-  }
-  </style>
-
-  <br>Already a member? Click <a href="index.php">here</a> to login.
-<?php } else { ?>
-  You already logged in. Click <a href="logout.php">here</a> to logout.
-<?php
- }
-?>
-
     </div>
    </div>
   </div>
 </div>
-</div>
+
 <!-- This design is created by manoj chauhan  -->
 </body>
 </html>

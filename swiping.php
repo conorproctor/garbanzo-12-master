@@ -12,6 +12,12 @@ include("connection.php"); //include connection.php file on all secure pages ?>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
     <link rel="stylesheet" href="index.css">
 
     <body class="w3-white">
@@ -28,8 +34,8 @@ include("connection.php"); //include connection.php file on all secure pages ?>
         <div class="w3-bar-block">
           <a href="login.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-red"><i class="fa fa-home"></i>  Back to Dash</a>
             <a href="index.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-red"><i class="fa fa-user"></i>  Your Profile</a>
-            <a href="liked.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-red"><i class="fa fa-check-circle-o"></i>  Liked Houses</a>
-            <a href="disliked.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-red"><i class="fa fa-times-circle-o"></i>  Passed Houses</a>
+            <a href="garbanzo-master/liked.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-red"><i class="fa fa-check-circle-o"></i>   Houses</a>
+            <a href="garbanzo-master/disliked.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-red"><i class="fa fa-times-circle-o"></i>  Passed Houses</a>
 
         </div>
     </nav>
@@ -67,6 +73,43 @@ include("connection.php"); //include connection.php file on all secure pages ?>
             </section>
             <script src="js/data.js"></script>
             <script src="js/index.js"></script>
+<center><body>
+
+<div class="container">
+ <!-- Button to Open the Modal -->
+ <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">See house details</button>
+
+ <!-- The Modal -->
+ <div class="modal fade" id="myModal">
+   <div class="modal-dialog">
+     <div class="modal-content">
+
+       <!-- Modal Header -->
+       <div class="modal-header">
+         <center><h4 class="modal-title">House details</h4></center>
+         <button type="button" class="close" data-dismiss="modal">&times;</button>
+       </div>
+
+       <!-- Modal body -->
+       <div class="modal-body">
+         PHP data
+         <br><br><br><br><br><br><br><br><br><br><br><br><br>
+         print landlord House details corresponding to this house ID
+
+       </div>
+
+       <!-- Modal footer -->
+       <div class="modal-footer">
+         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+       </div>
+
+     </div>
+   </div>
+ </div>
+
+</div>
+
+</body></center>
 
 			<script>
             // Script to open and close sidebar

@@ -55,7 +55,7 @@ session_start();?>
              <a href="index.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-user"></i>  Profile</a>
 
 
-             <a href="#swiping" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-hand-pointer-o"></i>  Start swiping</a>
+             <a href="#swiping" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-hand-pointer-o"></i>  See who swiped for you</a>
 
          </div>
      </nav>
@@ -127,8 +127,8 @@ session_start();?>
                    </div>
                </div>
 
-               <a href="swiping.php">
-                     <center><h1 class="w3-xxxlarge w3-text-blue"><b>Start swiping <i class="fa fa-hand-pointer-o"></i></b></h1></center>
+               <a href="swiped_yes.php">
+                     <center><h1 class="w3-xxxlarge w3-text-blue"><b> See who swiped for you <i class="fa fa-hand-pointer-o"></i></b></h1></center>
                  </a>
            </div>
 

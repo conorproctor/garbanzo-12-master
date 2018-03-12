@@ -14,7 +14,12 @@ include 'connection.php';
 <head>
     <meta charset="UTF-8">
     <head>
-    <body style="background-color:gray">
+      <style>
+      body{
+        background-image: url(http://www.joburgchiropractor.co.za/images/background.jpg);
+      }
+
+    </style>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
   </head>

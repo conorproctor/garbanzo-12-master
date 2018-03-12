@@ -15,11 +15,32 @@ session_start();
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
     <body>
-    <br><br><br><center><i class="fa fa-user-plus" style="font-size:120px;color:blue"></i></center>
+    <br><center><i class="fa fa-user-plus" style="font-size:120px;color:blue"></i></center>
     <br>
     <style>body{
       background-image: url(http://www.joburgchiropractor.co.za/images/background.jpg);
     }</style>
+    <div class="container" style="margin-top: 5%;">
+      <div class="row">
+        <div class="col-sm-4"> </div>
+    <div class="col-md-4">
+
+    <h1 class="text-center text-success">Register as a Tenant or Landlord</h1>
+    <br>
+    <div class="col-sm-12">
+
+      <ul class="nav nav-pills" >
+
+        <li class="" style="width:50%"><a class="btn btn-lg btn-default" data-toggle="tab" href="#home">Tenant</a></li>
+        <!--<li class=" " style="width:49%"><a class=" btn btn-lg btn-default" data-toggle="tab" href="#menu1">Landlord</a></li>-->
+
+      </ul>
+
+      <div class="tab-content">
+        <!--<div id="home" class="tab-pane fade in active">
+        </div>-->
+
+
 
 <?php
   if (!isset($_SESSION['username'])) { ?>
@@ -32,17 +53,15 @@ session_start();
  }
 }
 ?>
-  <center><form method="post" action="register-action.php">
+  <center>
+    <form method="post" action="register-action.php">
 
-    <input type="text" name="username" placeholder="Username" required /><br>
-    <input type="password" name="password" placeholder="Password" required /><br>
+      <input type="text" name="username" placeholder="Username" required /><br>
+      <input type="password" name="password" placeholder="Password" required /><br>
 
     <input type="submit" name="submit"  value="Register" />
-  </form>
-  <style>  input{
-   text-align:center;
-  }
-  <style>
+   </form>
+  <style>  input{ text-align:center; } </style>
 
   <br><br>Already a member? Click <a href="index.php">here</a> to login.
 <?php } else { ?>
@@ -50,6 +69,14 @@ session_start();
 <?php
  }
 ?>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 </center>
 </body>
 </html>

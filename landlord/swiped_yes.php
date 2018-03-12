@@ -43,32 +43,10 @@ include("connection.php"); //include connection.php file on all secure pages ?>
     <!-- Overlay effect when opening sidebar on small screens -->
     <div class=" w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
-        <body>
-            <section>
-                <div class="cardcontainer list">
-                    <ul class="cardlist">
-                        <li class="card current">
 
-                            <div class="dvCard">
-                                <div class="dvImage">
-                                    <img class="image" src="" />
-                                    <div class="likeTag tag">Like</div>
-                                    <div class="nopeTag tag">No</div>
-                                </div>
-                                <span class="name"></span>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="dvButtons">
-                        <div id="btnNope" class="nope button"><i class="fa fa-times" aria-hidden="true"></i></div>
-                        <div id="btnLike" class="like button"><i class="fa fa-heart" aria-hidden="true"></i></div>
-                        <div class="clearBoth"></div>
-                    </div>
-                </div>
-            </section>
+    //insert code here muthafucka
 
-            <script src="js/data.js"></script>
-            <script src="js/index.js"></script>
+
 
 			<script>
             // Script to open and close sidebar
