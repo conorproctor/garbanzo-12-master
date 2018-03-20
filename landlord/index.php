@@ -10,7 +10,11 @@ session_start();?>
     <link rel="stylesheet" href="css/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="PHPMySqlFileUpload/css/bootstrap.min.css" rel="stylesheet">
+
     </head>
+    <a href="login.php" class="btn btn-info">Go Back</a>
+
     <body>
       <br><br><center><i class="fa fa-user" style="font-size:120px;color:blue"></i></center>
       <br>
@@ -35,19 +39,20 @@ session_start();?>
     <style>  input{
      text-align:center;
 }
-  <style>
+  </style>
   <?php } else if (isset($_SESSION['username'])) { ?>
 
-        <?php echo $_SESSION['username'] ?>'s Profile</a> | <a href="logout.php">Logout</a>
-    <?php } ?>
+  <?php } ?>
     <?php
     if (isset($_SESSION['username'])) {
       $username = $_SESSION['username'];
       $landlord = $mysqli->query("SELECT * FROM landlord WHERE username='$username'");
        while ($user_data = $landlord->fetch_assoc()) { ?>
 
-         <b><?php echo $user_data['user_id'] ?></b>
-    <?php echo $user_data['username'] ?> | <a href="profile.php?user=<?php echo $user_data['username'] ?>">View Profile</a>
+             <center><b><?php echo $user_data['user_id'] ?></b>
+        <?php echo $user_data['username'] ?><br><a href="landlord-profile.php?user=<?php echo $user_data['username'] ?>"><br>View Profile</a><br><br>
+        <a href="matches.php"><i class="fa fa-handshake-o"></i>  Your matches</a><br><br>
+         <a href="logout.php" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-log-out"></span> Log out </a><br></center>
     <?php }
    }
    ?>

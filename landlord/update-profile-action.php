@@ -13,7 +13,6 @@
             $amenities = $_POST['amenities'];
             $rules = $_POST['rules'];
             $nearby_facilities = $_POST['nearby_facilities'];
-            $photo = $_POST['photo'];
 
             $update_profile = $mysqli->query("UPDATE landlord SET
                full_name = '$full_name',
@@ -28,10 +27,9 @@
                amenities = '$amenities',
                rules = '$rules',
                nearby_facilities = '$nearby_facilities',
-               photo = '$photo'
                WHERE username = '$user'");
     if ($update_profile) {
-             header("Location: profile.php?user=$user");}
+             header("Location: landlord-profile.php?user=$user");}
               else{
                 echo $mysqli->error;
           }

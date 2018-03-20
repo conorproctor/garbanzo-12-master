@@ -110,12 +110,12 @@
     parent.appendChild(clone);
     updateMouseDown();
     var id = target.id.split('_')[1];
-    if (ev.animationName === 'likeAnimate') {
-      window.location.href = "liked.php?id=" + id;
-    }
-    if (ev.animationName === 'nopeAnimate') {
-      window.location.href = "disliked.php?id=" + id;
-    }
+    //if (ev.animationName === 'likeAnimate') {
+      //window.location.href = "liked.php?id=" + id;
+    //}
+    //if (ev.animationName === 'nopeAnimate') {
+      //window.location.href = "disliked.php?id=1" + id;
+    //}
   }
 
   function getContainer(ele) {

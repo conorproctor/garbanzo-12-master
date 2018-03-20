@@ -32,7 +32,7 @@ session_start();
       <ul class="nav nav-pills" >
 
         <li class="" style="width:50%"><a class="btn btn-lg btn-default" data-toggle="tab" href="#home">Tenant</a></li>
-        <!--<li class=" " style="width:49%"><a class=" btn btn-lg btn-default" data-toggle="tab" href="#menu1">Landlord</a></li>-->
+        <li class=" " style="width:49%"><a class=" btn btn-lg btn-default" data-toggle="tab" href="#menu1">Landlord</a></li>
 
       </ul>
 
@@ -44,7 +44,6 @@ session_start();
 
 <?php
   if (!isset($_SESSION['username'])) { ?>
-    <h1><center>Registration</center></h1>
 <?php
   if (isset($_GET['register_action'])) {
     if ($_GET['register_action'] == "success") { ?>

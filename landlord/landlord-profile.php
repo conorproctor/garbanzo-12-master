@@ -13,6 +13,18 @@ include 'connection.php';
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <title>HouseFindr</title>
+
+
+
     <head>
       <style>
       body{
@@ -28,32 +40,30 @@ include 'connection.php';
 </head>
 
 <body>
-    <a href="index.php">Home</a> |<?php echo $profile_data['username'] ?>'s Profile <h3>Personal Information |
+  <a href="index.php">Back to interface </a></i>
+  | This is your house profile <?php echo $profile_data['username'] ?>!
+  | <a href="edit-landlord-profile.php?user=<?php echo $profile_data['username'] ?>"> Edit House Details</a>
+  | <a href="PHPMySqlFileUpload/photo-index.php"> Upload photos </a> | <a href="login.php"> Back to home page </a>
+
+    <h3>House Information
         <?php
         $visitor = $_SESSION['username'];
         if ($user == $visitor ) { ?>
-        <a href="edit-profile.php?user=<?php echo $profile_data['username'] ?>">Edit Profile</a> | <a href="login.php"> Back to home page </a>
-
         <?php }
         ?>
     </h3>
     <table>
       <center>
+
         <tr>
-            <td>Name:</td>
-            <td>
-                <?php echo $profile_data['full_name'] ?>
-            </td>
-        </tr>
-        <tr>
-            <td>Address:</td>
+            <td>House address:</td>
             <td>
                 <?php echo $profile_data['address'] ?>
             </td>
         </tr>
 
         <tr>
-            <td>College:</td>
+            <td>Nearest College:</td>
             <td>
                 <?php echo $profile_data['college'] ?>
             </td>
@@ -112,14 +122,10 @@ include 'connection.php';
                 <?php echo $profile_data['nearby_facilities'] ?>
             </td>
         </tr>
-        <tr>
-            <td>Photo Upload:</td>
-            <td>
-                <?php echo $profile_data['photo'] ?>
-            </td>
-        </tr>
+
 
     </table>
+    <a href="PHPMySqlFileUpload/photo-index.php"class="btn btn-info"> Upload photos </a>  <a href="PHPMySqlFileUpload/view.php" class="btn btn-info">Show Uploaded Files</a>
   </center>
 </body>
 </html>

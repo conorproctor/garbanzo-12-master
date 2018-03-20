@@ -38,7 +38,7 @@ article {
 
 
 
-(function(){
+function(){
 	function getId() {
 		var parameters = window.location.search.split('?')[1];
 		var params = parameters.split('&');
@@ -65,5 +65,5 @@ article {
 	init_data();
 
       window.location.href = "C://Users/cproc/Desktop/PG.2/push/www/index.html?id=" + id;
- 
+
 })();

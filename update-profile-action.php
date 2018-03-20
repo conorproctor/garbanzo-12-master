@@ -18,9 +18,14 @@
             $nearby_facilities = $_POST['nearby_facilities'];
 
             $update_profile = $mysqli->query("UPDATE users SET
-               full_name = '$full_name', age = $age, gender = '$gender', address = '$address', college = '$college',
-               course= '$course', year= '$year', distance= '$distance', leaselength = '$leaselength', rent = '$rent',
-               deposit = '$deposit', move_in = '$move_in', room = '$room', amenities = '$amenities', nearby_facilities = '$nearby_facilities'
+               full_name = '$full_name', age = $age,
+               gender = '$gender', address = '$address',
+               college = '$college', course= '$course',
+               year= '$year', distance= '$distance',
+               leaselength = '$leaselength', rent = '$rent',
+               deposit = '$deposit', move_in = '$move_in',
+               room = '$room', amenities = '$amenities',
+               nearby_facilities = '$nearby_facilities'
                WHERE username = '$user'");
     if ($update_profile) {
              header("Location: profile.php?user=$user");}

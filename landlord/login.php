@@ -35,7 +35,6 @@ session_start();?>
  <div style="float:right">
    <form align="top-right" name="form1" method="post">
      <label class="logoutLblPos">
-       <a href="logout.php" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-log-out"></span> Log out </a>
 </div>
 
  <body>
@@ -51,11 +50,8 @@ session_start();?>
 
          <div class="w3-bar-block">
              <a href="#home" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-home"></i>  Home</a>
-
              <a href="index.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-user"></i>  Profile</a>
-
-
-             <a href="#swiping" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-hand-pointer-o"></i>  See who swiped for you</a>
+             <a href="matches.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-handshake-o"></i>  Your matches</a>
 
          </div>
      </nav>
@@ -73,10 +69,11 @@ session_start();?>
      <div class="w3-main" style="margin-left:340px;margin-right:40px">
 
          <!-- Header -->
-         <div class="w3-container" style="margin-top:80px" id="gallery">
-             <h1 class="w3-jumbo w3-text-blue"><b>HouseFindr</b></h1>
-             <h4><b>Swipe to find your student accommodation or the perfect tenant</b></h4>
-             <h1 class="w3-xxxlarge w3-text-blue"><b>Gallery</b></h1>
+      <div class="w3-container" style="margin-top:80px" id="gallery">
+        <center><h3 class=" w3-text-blue"><b>Welcome to HouseFindr </b></h3>
+        <h5><b>Students can swipe to find their desired student accommodation and potenially link up with you</b></h5></center>
+        <br><center><h2 class=" w3-text-blue">Gallery</h2></center>
+        <center><h5><b>Check out some of the recent images uploaded by some of our other landlords</b></h5></center>
          </div>
 
          <!-- Photo grid (modal) -->
@@ -106,18 +103,18 @@ session_start();?>
 
          <!-- what makes our app unique -->
          <div class="w3-container" id="choice" style="margin-top:75px">
-             <h1 class="w3-xxxlarge w3-text-blue"><b>What makes our app unique?</b></h1>
-             <p>Are you a student/landlord who hates the hassle of sorting out accommodation for the academic year? </p>
+             <h2 class=" w3-text-blue"><center>What makes our app unique?</center></h2>
+             <p>Are you a landlord who hates the hassle of sorting out accommodation for the academic year? </p>
              <p>Yes? Great! - Then look no further, this app has it all. </p>
              <p>For the students of colleges around Ireland, accommodation seems to be scarce. Some students are living in hostels, on couches or worse again, commuting for 2,3 or 4+ hours. This is not practical in the slightest & is very off-putting for first year students - first year students are effected the most and this app helps alleviate this problem for these students. </p>
-             <p>For the Landlords in these cities with colleges, it's a nightmare for them too. Landlords have their preferences for who stays in their properties, some more picky than others. This app has landlords who are just looking for students to stay in their houses - therefore reducing the amount of homeless students substancially. </p>
+             <p>For all you landlords in the cities with colleges, it's a nightmare for yiu too. Landlords have their preferences for who stays in their properties, some more picky than others. This app has landlords who are just looking for students to stay in their houses - therefore reducing the amount of homeless students substancially. </p>
          </div>
 
          <!-- Swiping -->
          <div class="w3-container" id="swiping" style="margin-top:75px">
-           <div class="w3-container" id="choice" style="margin-top:75px">
-               <h1 class="w3-xxxlarge w3-text-blue"><b>Get swiping!</b></h1>
-               <p>Start swiping today and find the house that best suits you! As shown below, you can see how you choose whether you like the house or not, it's as simple as that! </p>
+               <h2 class=" w3-text-blue"><center>The Swiping!</center></h2>
+               <p>When you've created your house profile & added the images of your house - your house will become swipable.</p><br>
+               <p>If the Student swipes right (likes) your house, they could potentially match with you if they meet the criteria of your house! It's simple as that! </p>
                <div class="w3-row-padding">
                    <div class="w3-half">
                      <img src="img\swipe-no.jpg" style="width:100%" onclick="onClick(this)" alt="Swipe no if you don't feel this house suits you">
@@ -126,10 +123,6 @@ session_start();?>
                      <img src="img\swipe-yes.jpg" style="width:100%" onclick="onClick(this)" alt="Swipe yes to try match with your ideal landlord">
                    </div>
                </div>
-
-               <a href="swiped_yes.php">
-                     <center><h1 class="w3-xxxlarge w3-text-blue"><b> See who swiped for you <i class="fa fa-hand-pointer-o"></i></b></h1></center>
-                 </a>
            </div>
 
              <!-- End page content -->
