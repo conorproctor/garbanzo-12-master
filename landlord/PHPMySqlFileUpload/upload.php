@@ -14,10 +14,15 @@
 			return;
 		}
 
-		$conn = mysqli_connect("localhost","root","","db1");
+		$conn = mysqli_connect("localhost","root","","cp");
+
+		$landlord = $_POST["landlord_id"];
+
+	 echo $landlord;
 
 		foreach($_FILES["files"]["tmp_name"] as $key=>$tmp_name)
 		{
+
 			$uploadThisFile = true;
 
 			$file_name=$_FILES["files"]["name"][$key];
@@ -47,7 +52,7 @@
 				$newFileName=$filename.$ext;
 				move_uploaded_file($_FILES["files"]["tmp_name"][$key],"Upload/".$newFileName);
 
-				$query = "INSERT INTO userfiles(FilePath, FileName) VALUES('Upload','".$newFileName."')";
+				$query = "INSERT INTO userfiles(landlord_id, FilePath, FileName) VALUES('$landlord', 'Upload','".$newFileName."')";
 
 				mysqli_query($conn, $query);
 			}

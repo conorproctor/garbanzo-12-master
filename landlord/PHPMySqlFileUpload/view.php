@@ -1,3 +1,8 @@
+<?php
+include '../connection.php';
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<header>
@@ -44,29 +49,41 @@
 					<h3>Uploaded Photos:</h3>
 					<br/>
 					<?php
-						$conn = mysqli_connect("localhost","root","","cp");
+					if (isset($_SESSION['username'])) {
+						$username = $_SESSION['username'];
+						$landlord = $mysqli->query("SELECT * FROM landlord WHERE username='$username'");
+						 while ($user_data = $landlord->fetch_assoc()) {
+							 $landlord_id =  $user_data['user_id'] ?>
+							 <?php
+			 					$conn = mysqli_connect("localhost","root","","cp");
 
-						$query = "SELECT * FROM userfiles";
+			 					$query = "SELECT * FROM userfiles WHERE landlord_id = $landlord_id";
 
-						$result = mysqli_query($conn, $query);
 
-						if(mysqli_num_rows($result) > 0)
-						{
-							while($row = mysqli_fetch_assoc($result))
-							{
-								$url = $row["FilePath"]."/".$row["FileName"];
-					?>
-								<a href="<?php echo $url; ?>"><image src="<?php echo $url; ?>" class="images" /></a>
-					<?php
-							}
-						}
-						else
-						{
-					?>
-						<p>There are no images uploaded to display.</p>
-					<?php
-						}
-					?>
+			 					$result = mysqli_query($conn, $query);
+
+			 					if(mysqli_num_rows($result) > 0)
+			 					{
+			 						while($row = mysqli_fetch_assoc($result))
+			 						{
+			 							$url = $row["FilePath"]."/".$row["FileName"];
+			 				?>
+			 							<a href="<?php echo $url; ?>"><image src="<?php echo $url; ?>" class="images" /></a>
+			 				<?php
+			 						}
+			 					}
+			 					else
+			 					{
+			 				?>
+			 					<p>There are no images uploaded to display.</p>
+			 				<?php
+			 					}
+			 				?>
+						<?php }
+					 }
+					 ?>
+
+
 				</div>
 			</div>
 		</div>

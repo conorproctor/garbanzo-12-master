@@ -1,3 +1,7 @@
+<?php
+include '../connection.php';
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<header>
@@ -11,6 +15,21 @@
 		}
 
 	</style>
+
+	<?php
+	if (isset($_SESSION['username'])) {
+		$username = $_SESSION['username'];
+		$landlord = $mysqli->query("SELECT * FROM landlord WHERE username='$username'");
+		 while ($user_data = $landlord->fetch_assoc()) { ?>
+
+					 <b><?php echo $user_data['user_id'] ?></b>
+			<?php echo $user_data['username'] ?><br>
+		<?php }
+	 }
+	 ?>
+
+
+
 		<!-- Bootstrap -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<a href="/garbanzo-12-master/landlord/index.php" class="btn btn-info">Go Back</a>
@@ -26,6 +45,19 @@
 						<div class="form-group">
 							<label for="exampleInputFile">Select files to upload:</label>
 							<input type="file" id="exampleInputFile" name="files[]" multiple="multiple">
+							<?php
+							if (isset($_SESSION['username'])) {
+								$username = $_SESSION['username'];
+								$landlord = $mysqli->query("SELECT * FROM landlord WHERE username='$username'");
+								 while ($user_data = $landlord->fetch_assoc()) { ?>
+
+									 <input type="hidden" id="landlordInput" name="landlord_id" value="<?php echo $user_data['user_id'] ?>">
+
+									<?php echo $user_data['username'] ?><br>
+								<?php }
+							 }
+							 ?>
+
 							<p class="help-block"><span class="label label-info">Note</span> <br>Please only select file types: (.jpg, .jpeg, .png, .gif) to upload with the size of 100KB only.</p>
 						</div>
 						<button type="submit" class="btn btn-primary" name="btnSubmit" >Upload Images</button>
