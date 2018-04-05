@@ -1,16 +1,14 @@
 var data = [
       {
         "id": 1,
-        "name": "Laurel Park, 3km from NUIG",
+        "name": "Laurel Park, €100",
         "price": "€400 pm",
-        "desc": "parking, washing machine.",
         "src": "https://b.dmlimg.com/MmVkOTkyN2QxMzZlNTExZDFhMWRjMTZiMzE0NGQ5OWZEd3gE61dxgX27nC21XB58aHR0cDovL3MzLWV1LXdlc3QtMS5hbWF6b25hd3MuY29tL21lZGlhbWFzdGVyLXMzZXUvOC9kLzhkODhkNTNkZjFmODliZGIyODMzZmM5NzBkMzIyMDlkLmpwZ3x8fHx8fDYwMHg0NTB8fHx8.jpg"
       },
       {
         "id": 2,
         "name": "Corrib Park, 3km from NUIG ",
         "price": "€380",
-        "desc": "wifi.",
         "src": "https://photos-a.propertyimages.ie/media/4/7/8/3259874/666075f4-f179-4b66-9a41-7f2fb3797e1f_l.jpg"
       },
       {

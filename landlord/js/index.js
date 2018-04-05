@@ -1,4 +1,4 @@
-function(){
+(function(){
   var animating = false;
   var selectedCard = null;
   var mouse_x = 0;
@@ -6,6 +6,8 @@ function(){
   var ele_x = 0;
   var ele_y = 0;
   var cardOffsetLeft = 0;
+  console.log('test');
+  console.log(data[0][3]);
 
   function init_data () {
     var card = document.body.querySelector('.current');
@@ -14,18 +16,18 @@ function(){
     card.classList.remove('current');
     for(var i = 0; i < data.length; i++) {
       var clone = card.cloneNode(true);
-      clone.id = "card_" + data[i].id;
-      clone.querySelector('img').src = data[i].src;
-      clone.querySelector('.name').innerHTML = data[i].name;
+      clone.id = "card_" + data[i][0];
+      clone.querySelector('img').src = 'landlord/PHPMySqlFileUpload/Upload/'+data[i][3];
+      clone.querySelector('.name').innerHTML = data[i][1];
       if(i == 0) {
         clone.classList.add('current');
       }
       parent.appendChild(clone);
     }
   }
-  <p id="animatecard" onclick="myFunction()">Click me to change my text color.</p>
-
-
+//http://localhost/garbanzo-12-master/garbanzo-12-master/landlord/PHPMySqlFileUpload/Upload/qwertyuiop.png
+//http://localhost/garbanzo-12-master/garbanzo-12-master/landlord/PHPMySqlFileUpload/Upload/8AB29C4C-90B5-409F-8B6B-C076AA31189E.jpeg
+//http://localhost/garbanzo-12-master/landlord/PHPMySqlFileUpload/Upload/qwertyuiop.png
   function myFunction() {
       document.getElementById("animatecard").style.color = "red";
   }
@@ -113,11 +115,11 @@ function(){
     updateMouseDown();
     var id = target.id.split('_')[1];
     if (ev.animationName === 'likeAnimate') {
-      window.location.href = "liked.php?id=" + id;
+      window.location.href = "tenant-view-landlord.php?landlord=" + id;
     }
-    if (ev.animationName === 'nopeAnimate') {
-      window.location.href = "disliked.php?id=" + id;
-    }
+    // if (ev.animationName === 'nopeAnimate') {
+      // window.location.href = "disliked.php?id=" + id;
+    // }
   }
 
   function getContainer(ele) {

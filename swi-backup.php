@@ -1,6 +1,6 @@
-<?php
-include("connection.php");//include connection.php file on all secure pages
-session_start();?>
+c<?php
+
+include("connection.php"); //include connection.php file on all secure pages ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +18,7 @@ session_start();?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-    <!-- <link rel="stylesheet" href="index.css"> -->
+    <link rel="stylesheet" href="index.css">
 
     <body class="w3-white">
 
@@ -48,6 +48,7 @@ session_start();?>
     <!-- Overlay effect when opening sidebar on small screens -->
     <div class=" w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
+        <center>
             <section>
                 <div class="cardcontainer list">
                     <ul class="cardlist">
@@ -69,47 +70,59 @@ session_start();?>
                     </div>
                 </div>
             </section>
-            <!-- <script src="js/data.js"></script> -->
+            <script src="js/data.js"></script>
+            <script src="js/index.js"></script>
 
-    <div class="container">
-     <!-- Button to Open the Modal -->
-     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">See house details</button>
+<div class="container">
+ <!-- Button to Open the Modal -->
+ <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">See house details</button>
 
-     <script>var data = []</script>
+ <!-- The Modal -->
+ <div class="modal fade" id="myModal">
+   <div class="modal-dialog">
+     <div class="modal-content">
 
-    <?php
-    if (isset($_SESSION['username'])) {
-      $username = $_SESSION['username'];
-      $users = $mysqli->query("SELECT l.user_id, l.address, l.rent, u.FileName FROM landlord l JOIN userfiles u on u.landlord_id = l.user_id");
-       while ($user_data = $users->fetch_assoc()) { ?>
+       <!-- Modal Header -->
+       <div class="modal-header">
+         <center><h4 class="modal-title">House details</h4></center>
+         <button type="button" class="close" data-dismiss="modal">&times;</button>
+       </div>
 
-         <?php echo $user_data['user_id'] ?>
 
-         <script>
-          var js_array<?php echo $user_data['user_id'] ?> = [<?php echo '"'.implode('","',  $user_data ).'"' ?>];
-       //console.log(js_array<?php echo $user_data['user_id'] ?>);
-          data.push(js_array<?php echo $user_data['user_id'] ?>)
+
+
+       <!-- <script> var js_array = [<?php echo '"'.implode('","',  $user_data ).'"' ?>]; -->
+       console.log(js_array);
        </script>
 
-     <?php }
-    }
-    ?>
-      <!-- <script>console.log("total houses")</script> -->
-      <script>console.log(data)</script>
 
-      <script src="landlord/js/index.js"></script>
-
-         <!--$houses = array();
-
-         $result = mysql_query($sql);
-         while(($row = mysql_fetch_assoc($result))) {
-             $houses[$row['id_customer']] = $row['name_customer'];
-         }-->
+mat - code
 
 
 
 
-    </div>
+
+
+       <!-- Modal body -->
+       <div class="modal-body">
+         PHP data
+         <br><br><br><br><br><br><br><br><br><br><br><br><br>
+         print landlord House details corresponding to this landlord ID
+
+       </div>
+
+       <!-- Modal footer -->
+       <div class="modal-footer">
+         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+       </div>
+
+     </div>
+   </div>
+ </div>
+
+</div>
+
+</center>
 
 			<script>
             // Script to open and close sidebar
