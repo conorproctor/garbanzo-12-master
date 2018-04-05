@@ -83,7 +83,6 @@ include 'connection.php';
              </div>
 
              <div class="w3-half">
-                 <img src="img\houses.jpg" style="width:100%" onclick="onClick(this)" alt="Luxurious, spacious rooms">
                  <img src="img\bathroom.jpg" style="width:100%" onclick="onClick(this)" alt="Clean, spacious bathrooms">
                  <img src="img\house2.jpg" style="width:100%" onclick="onClick(this)" alt="Enjoy the high quality houses">
              </div>

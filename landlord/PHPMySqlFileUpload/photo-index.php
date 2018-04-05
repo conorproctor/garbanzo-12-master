@@ -53,12 +53,11 @@ session_start();
 
 									 <input type="hidden" id="landlordInput" name="landlord_id" value="<?php echo $user_data['user_id'] ?>">
 
-									<?php echo $user_data['username'] ?><br>
 								<?php }
 							 }
 							 ?>
 
-							<p class="help-block"><span class="label label-info">Note</span> <br>Please only select file types: (.jpg, .jpeg, .png, .gif) to upload with the size of 100KB only.</p>
+							<p class="help-block"><span class="label label-info">Note</span>  Please only select file types: (.jpg, .jpeg, .png, .gif) to upload with the size of 100KB only.</p>
 						</div>
 						<button type="submit" class="btn btn-primary" name="btnSubmit" >Upload Images</button>
 						<a href="view.php" class="btn btn-info">Show Uploaded Images</a>

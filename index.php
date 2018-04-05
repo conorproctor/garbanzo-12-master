@@ -16,7 +16,7 @@ session_start();?>
     </head>
     <body>
 
-      <br><br><center><i class="fa fa-user" style="font-size:130px;color:blue"></i></center>
+      <br><br><center><i class="fa fa-user" style="font-size:120px;color:blue"></i></center>
       <br><style>
       body{
         background-image: url(http://www.joburgchiropractor.co.za/images/background.jpg);

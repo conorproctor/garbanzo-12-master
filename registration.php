@@ -25,50 +25,89 @@ session_start();
         <div class="col-sm-4"> </div>
     <div class="col-md-4">
 
-    <h1 class="text-center text-success">Register as a Tenant or Landlord</h1>
+    <h1 class="text-center text-success">Register as Tenant/Landlord</h1>
     <br>
     <div class="col-sm-12">
 
       <ul class="nav nav-pills" >
 
-        <li class="" style="width:50%"><a class="btn btn-lg btn-default" data-toggle="tab" href="#home">Tenant</a></li>
-        <li class=" " style="width:49%"><a class=" btn btn-lg btn-default" data-toggle="tab" href="#menu1">Landlord</a></li>
+        <li class="active" style="width:50%"><a class="btn btn-lg btn-default" data-toggle="tab" href="#tenant">Tenant</a></li>
+        <li style="width:49%"><a class=" btn btn-lg btn-default" data-toggle="tab" href="#landlord">Landlord</a></li>
 
       </ul>
 
       <div class="tab-content">
-        <!--<div id="home" class="tab-pane fade in active">
-        </div>-->
+      <div id="tenant" class="tab-pane fade in active">
+      </div>
 
 
 
-<?php
-  if (!isset($_SESSION['username'])) { ?>
-<?php
-  if (isset($_GET['register_action'])) {
-    if ($_GET['register_action'] == "success") { ?>
-      Successfully Registered!
-<?php
- }
-}
-?>
-  <center>
-    <form method="post" action="register-action.php">
+                <center>
+                  <form method="post" action="register-action.php">
 
-      <input type="text" name="username" placeholder="Username" required /><br>
-      <input type="password" name="password" placeholder="Password" required /><br>
+                    <?php
+                      if (!isset($_SESSION['username'])) { ?>
+                    <?php
+                      if (isset($_GET['register_action'])) {
+                        if ($_GET['register_action'] == "success") { ?>
+                          Successfully Registered!
+                    <?php
+                     }
+                    }
+                    ?>
 
-    <input type="submit" name="submit"  value="Register" />
-   </form>
-  <style>  input{ text-align:center; } </style>
+                    <input type="text" name="username" placeholder="Username" required /><br>
+                    <input type="password" name="password" placeholder="Password" required /><br>
 
-  <br><br>Already a member? Click <a href="index.php">here</a> to login.
-<?php } else { ?>
-  You already logged in. Click <a href="logout.php">here</a> to logout.
-<?php
- }
-?>
-        </div>
+                  <input type="submit" name="submit"  value="Register" />
+                 </form>
+                <style>  input{ text-align:center; } </style>
+
+                <br><br>Already a member? Click <a href="index.php">here</a> to login.
+              <?php } else { ?>
+                You already logged in. Click <a href="logout.php">here</a> to logout.
+              <?php
+               }
+              ?>
+    </div>
+
+    <div class="tab-content">
+    <div id="landlord" class="tab-pane fade">
+    </div>
+
+
+
+              <center>
+                <form method="post" action="register-action.php">
+
+                  <?php
+                    if (!isset($_SESSION['username'])) { ?>
+                  <?php
+                    if (isset($_GET['landlord_register_action'])) {
+                      if ($_GET['landlord_register_action'] == "success") { ?>
+                        Successfully Registered!
+                  <?php
+                   }
+                  }
+                  ?>
+
+                <!--  <input type="text" name="username" placeholder="Username" required /><br>
+                  <input type="password" name="password" placeholder="Password" required /><br>
+
+                <input type="submit" name="submit"  value="Register" />
+               </form>
+              <style>  input{ text-align:center; } </style>
+-->
+              <br><br>Already a member? Click <a href="index.php">here</a> to login.
+            <?php } else { ?>
+              You already logged in. Click <a href="logout.php">here</a> to logout.
+            <?php
+             }
+            ?>
+  </div>
+
+
+
       </div>
     </div>
   </div>

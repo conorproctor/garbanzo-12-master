@@ -32,10 +32,9 @@ include("connection.php"); //include connection.php file on all secure pages ?>
         <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
 
         <div class="w3-bar-block">
-          <a href="login.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-red"><i class="fa fa-home"></i>  Back to Dash</a>
-            <a href="index.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-red"><i class="fa fa-user"></i>  Your Profile</a>
-            <a href="garbanzo-master/liked.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-red"><i class="fa fa-check-circle-o"></i>   Houses</a>
-            <a href="garbanzo-master/disliked.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-red"><i class="fa fa-times-circle-o"></i>  Passed Houses</a>
+          <a href="login.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-home"></i>  Home</a>
+            <a href="index.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-user"></i>  Profile</a>
+            <a href="matches.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-handshake-o"></i>  Your matches</a>
 
         </div>
     </nav>
@@ -49,7 +48,7 @@ include("connection.php"); //include connection.php file on all secure pages ?>
     <!-- Overlay effect when opening sidebar on small screens -->
     <div class=" w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
-        <body>
+        <center><body>
             <section>
                 <div class="cardcontainer list">
                     <ul class="cardlist">
@@ -73,7 +72,7 @@ include("connection.php"); //include connection.php file on all secure pages ?>
             </section>
             <script src="js/data.js"></script>
             <script src="js/index.js"></script>
-<center><body>
+<body>
 
 <div class="container">
  <!-- Button to Open the Modal -->
@@ -94,7 +93,7 @@ include("connection.php"); //include connection.php file on all secure pages ?>
        <div class="modal-body">
          PHP data
          <br><br><br><br><br><br><br><br><br><br><br><br><br>
-         print landlord House details corresponding to this house ID
+         print landlord House details corresponding to this landlord ID
 
        </div>
 

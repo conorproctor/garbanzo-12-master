@@ -85,7 +85,6 @@ session_start();?>
              </div>
 
              <div class="w3-half">
-                 <img src="img\houses.jpg" style="width:100%" onclick="onClick(this)" alt="Luxurious, spacious rooms">
                  <img src="img\bathroom.jpg" style="width:100%" onclick="onClick(this)" alt="Nice, tidy dining area to enjoy your meals">
                  <img src="img\house2.jpg" style="width:100%" onclick="onClick(this)" alt="Kick back and enjoy some Tv with your housemates">
              </div>

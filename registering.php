@@ -43,7 +43,6 @@ session_start();
   <?php
     if (!isset($_SESSION['username']))
     { ?>
-        <h1><center>Registration</center></h1>
   <?php
     if (isset($_GET['register_action']))
       {
@@ -69,10 +68,7 @@ session_start();
           <input type="password" class="form-control" id="pwd">
         </div>
 
-        <div class="form-group">
-          <label for="pwd">Confirm Password:</label>
-          <input type="password" class="form-control" id="pwd">
-        </div>
+
         <button type="submit" class="btn btn-default" value="Register">Submit</button>
 
       </form>
@@ -85,7 +81,7 @@ session_start();
 
     <div id="menu1" class="tab-pane fade">
 
-      <form method="post" action="register_landlord">
+      <form method="post" action="landlord/landlord-register-action.php">
 
         <div class="form-group">
           <label for="UserName">L-UserName</label>
@@ -94,11 +90,6 @@ session_start();
 
         <div class="form-group">
           <label for="pwd">Password:</label>
-          <input type="password" class="form-control" id="pwd">
-        </div>
-
-        <div class="form-group">
-          <label for="pwd">Confirm Password:</label>
           <input type="password" class="form-control" id="pwd">
         </div>
 
