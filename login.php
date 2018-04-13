@@ -16,11 +16,14 @@ include 'connection.php';
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
  <style>
-     body,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
-     h1{color:blue}
-     body {font-size: 16px;}
-     .w3-half img {margin-bottom: -6px;margin-top: 16px;opacity: 0.8;cursor: pointer}
-     .w3-half img:hover {opacity: 1}
+ <style>
+ body{
+    background-color: #cdebf9;}
+    h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+    h1{color:blue}
+    body {font-size: 16px;}
+    .w3-half img {margin-bottom: -6px;margin-top: 16px;opacity: 0.8;cursor: pointer}
+    .w3-half img:hover {opacity: 1}
 
      @media only screen and (max-width: 480px) {
  .responsive .container { width: 300px; }}
@@ -50,6 +53,7 @@ include 'connection.php';
              <a href="index.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-user"></i>  Profile</a>
              <a href="swiping.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-hand-pointer-o"></i>  Start swiping</a>
              <a href="matches.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-handshake-o"></i>  Your matches</a>
+             <a href="logout.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><span class="glyphicon glyphicon-log-out"></span> Log out </a>
 
          </div>
      </nav>

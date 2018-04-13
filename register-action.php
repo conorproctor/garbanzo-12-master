@@ -2,10 +2,11 @@
 include 'connection.php';
 
   if (isset($_POST['username'])) {
+      $email = $_POST['email'];
       $username = $_POST['username'];
       $password = $_POST['password'];
   //    $name = $_POST['full_name'];
-      $register = $mysqli->query("INSERT INTO users (username, password) VALUES ('$username', '". md5($password)."')");
+      $register = $mysqli->query("INSERT INTO users (email, username, password) VALUES ('$email', '$username', '". md5($password)."')");
   if ($register) {
 
       header("Location: index.php?register_action=success");

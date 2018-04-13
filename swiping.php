@@ -20,15 +20,19 @@ session_start();?>
 
     <!-- <link rel="stylesheet" href="index.css"> -->
 
-    <body class="w3-white">
-
+    <body>
+      <style>
+      body{
+        background-color: #cdebf9;
+      }
+    </style>
     <!-- Sidebar/menu -->
     <nav class="w3-sidebar w3-black w3-collapse w3-top w3-large w3-padding" style="z-index:10;width:300px;font-weight:bold;" id="mySidebar"><br>
 
 
 
         <!-- Avatar image in top left corner -->
-        <center><a href="login.php"><img src="img\logo1.jpg" style="width:50%"></a></center>
+        <center><br><img src="img\logo1.jpg" style="width:50%"></a></center>
         <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
 
         <div class="w3-bar-block">
@@ -72,18 +76,27 @@ session_start();?>
             <!-- <script src="js/data.js"></script> -->
 
     <div class="container">
-     <!-- Button to Open the Modal -->
-     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">See house details</button>
 
      <script>var data = []</script>
+
 
     <?php
     if (isset($_SESSION['username'])) {
       $username = $_SESSION['username'];
-      $users = $mysqli->query("SELECT l.user_id, l.address, l.rent, u.FileName FROM landlord l JOIN userfiles u on u.landlord_id = l.user_id");
+      // $users = $mysqli->query("SELECT l.user_id, l.address, l.rent, u.FileName FROM landlord l JOIN userfiles u on u.landlord_id = l.user_id");
+
+
+      // SELECT l.user_id, l.address, l.rent, uf.FileName FROM landlord l, users u, userfiles uf WHERE l.rent=u.rent AND u.username="cp"
+
+
+      $users = $mysqli->query("SELECT l.user_id, l.address, l.rent, uf.FileName from landlord l, users u, userfiles uf where (l.rent=u.rent) > 0 AND u.username='cp'");
+//IF THE USER MEETS THE CRITERIA FOR THESE 3 COLUMNS THEN THIS MATCH WILL BE AT THE TOP OF THE LIST OF  DESCENDING
+// ORDER BY (l.rent=u.rent + l.college=u.college + l.deposit=u.deposit) DESC
+
+
        while ($user_data = $users->fetch_assoc()) { ?>
 
-         <?php echo $user_data['user_id'] ?>
+         <!-- <?php echo $user_data['user_id'] ?> -->
 
          <script>
           var js_array<?php echo $user_data['user_id'] ?> = [<?php echo '"'.implode('","',  $user_data ).'"' ?>];
@@ -106,9 +119,6 @@ session_start();?>
              $houses[$row['id_customer']] = $row['name_customer'];
          }-->
 
-
-
-
     </div>
 
 			<script>
@@ -121,14 +131,6 @@ session_start();?>
             function w3_close() {
                 document.getElementById("mySidebar").style.display = "none";
                 document.getElementById("myOverlay").style.display = "none";
-            }
-
-            // Modal Image Gallery
-            function onClick(element) {
-                document.getElementById("img01").src = element.src;
-                document.getElementById("modal01").style.display = "block";
-                var captionText = document.getElementById("caption");
-                captionText.innerHTML = element.alt;
             }
         </script>
         </body>

@@ -11,10 +11,12 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
+  <style>        body{background-color: #cdebf9;}
+</style>
     <body>
+
     <br><br><center><i class="fa fa-user-plus" style="font-size:120px;color:blue"></i></center>
     <br>
-    <body style="background-color:gray">
 <body>
 <?php
   if (!isset($_SESSION['username'])) { ?>
@@ -27,8 +29,9 @@ session_start();
  }
 }
 ?>
-  <center><form method="post" action="register-action.php">
+  <center><form method="post" action="landlord-register-action.php">
 
+    <input type="text" name="email" placeholder="Email" required /><br>
     <input type="text" name="username" placeholder="Username" required /><br>
     <input type="password" name="password" placeholder="Password" required /><br>
 

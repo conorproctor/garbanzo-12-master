@@ -17,7 +17,8 @@ session_start();?>
  <style>
      body,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
      h1{color:blue}
-     body {font-size: 16px;}
+     body {background-color: #cdebf9;}
+     {font-size: 16px;}
      .w3-half img {margin-bottom: -6px;margin-top: 16px;opacity: 0.8;cursor: pointer}
      .w3-half img:hover {opacity: 1}
 
@@ -30,8 +31,11 @@ session_start();?>
 @media only screen and (max-width: 480px) {
   .template-page .entry-content-wrapper h1 { font-size: 24px; }}
 
+  body{
+  }
 
- </style>
+  </style>
+
  <div style="float:right">
    <form align="top-right" name="form1" method="post">
      <label class="logoutLblPos">
@@ -45,13 +49,14 @@ session_start();?>
 
 
          <!-- Avatar image in top left corner -->
-         <center><a href="login.php"><img src="img\logo1.jpg" style="width:50%"></a></center>
+         <br><center><a href="login.php"><img src="img\logo1.jpg" style="width:50%"></a></center>
          <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
 
          <div class="w3-bar-block">
              <a href="#home" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-home"></i>  Home</a>
              <a href="index.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-user"></i>  Profile</a>
              <a href="matches.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-handshake-o"></i>  Your matches</a>
+             <a href="logout.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><span class="glyphicon glyphicon-log-out"></span> Log out </a>
 
          </div>
      </nav>

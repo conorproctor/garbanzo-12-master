@@ -6,8 +6,8 @@
   var ele_x = 0;
   var ele_y = 0;
   var cardOffsetLeft = 0;
-  console.log('test');
-  console.log(data[0][3]);
+   console.log('test');
+   console.log(data[0][3]);
 
   function init_data () {
     var card = document.body.querySelector('.current');
@@ -22,12 +22,10 @@
       if(i == 0) {
         clone.classList.add('current');
       }
-      parent.appendChild(clone);
+       parent.appendChild(clone);
     }
   }
-//http://localhost/garbanzo-12-master/garbanzo-12-master/landlord/PHPMySqlFileUpload/Upload/qwertyuiop.png
-//http://localhost/garbanzo-12-master/garbanzo-12-master/landlord/PHPMySqlFileUpload/Upload/8AB29C4C-90B5-409F-8B6B-C076AA31189E.jpeg
-//http://localhost/garbanzo-12-master/landlord/PHPMySqlFileUpload/Upload/qwertyuiop.png
+
   function myFunction() {
       document.getElementById("animatecard").style.color = "red";
   }

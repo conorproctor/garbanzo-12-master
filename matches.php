@@ -19,12 +19,9 @@ session_start();?>
     <style type="text/css">
 
     body{
-      background-image: url(http://www.joburgchiropractor.co.za/images/background.jpg);
+      background-color: url(http://www.joburgchiropractor.co.za/images/background.jpg);
     }
-
     </style>
   </head>
 </head>
-
-
 </html>

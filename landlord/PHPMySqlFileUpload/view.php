@@ -15,7 +15,7 @@ session_start();
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<style>
 		body{
-			background-image: url(http://www.joburgchiropractor.co.za/images/background.jpg);
+			background-color: #cdebf9;
 		}
 
 	</style>
@@ -37,16 +37,15 @@ session_start();
 			}
 		</style>
 	</header>
-	<a href="photo-index.php" class="btn btn-info">Go Back</a>
-
-	<body>
+	<a href="javascript:history.back()" class="btn btn-info">Go Back</a>
+<body>
 		<div class="container">
 			<div class="page-header">
-				<h1>Upload photos to your profile</h1>
+				<h1>Upload photo to your swipe card</h1>
 			</div>
 			<div class="panel panel-default">
 				<div class="panel-body">
-					<h3>Uploaded Photos:</h3>
+					<center><h3>Uploaded Photo:</h3>
 					<br/>
 					<?php
 					if (isset($_SESSION['username'])) {
@@ -68,14 +67,14 @@ session_start();
 			 						{
 			 							$url = $row["FilePath"]."/".$row["FileName"];
 			 				?>
-			 							<a href="<?php echo $url; ?>"><image src="<?php echo $url; ?>" class="images" /></a>
+			 							<a href="<?php echo $url; ?>"><image src="<?php echo $url; ?>" class="images" /></a></center>
 			 				<?php
 			 						}
 			 					}
 			 					else
 			 					{
 			 				?>
-			 					<p>There are no images uploaded to display.</p>
+			 					<p>There is no image uploaded to display.</p>
 			 				<?php
 			 					}
 			 				?>

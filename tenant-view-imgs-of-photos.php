@@ -28,30 +28,10 @@ include 'connection.php';
       <style type="text/css">
 
       body{
-        background-color:#cdebf9;      }
+        background-color: #cdebf9;
+      }
 
-  #tenant-view-box {
-      font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-      border-collapse: collapse;
-      width: 100%;
-  }
-  #tenant-view-box td, #tenant-view-box th {
-      border: 1px solid #000000;
-      padding: 8px;
-    }
-
-  #tenant-view-box tr:nth-child(even){background-color: #f2f2f2;}
-
-  #tenant-view-box tr:hover {background-color: #ddd;}
-
-  #tenant-view-box th {
-      padding-top: 12px;
-      padding-bottom: 12px;
-      text-align: left;
-      background-color: #000000;
-      color: white;
-  }
-  </style>
+      </style>
 
   </head>
     <title><?php echo $profile_data['username'] ?>'s Profile</title>
@@ -92,107 +72,14 @@ include 'connection.php';
         <?php }
         ?>
 
-    <center><br><br><br><h3>House Information</h3>
-    <table id="tenant-view-box">
-
-
-        <tr>
-            <td>House address:</td>
-            <td>
-                <?php echo $profile_data['address'] ?>
-            </td>
-        </tr>
-
-        <tr>
-            <td>Nearest College:</td>
-            <td>
-                <?php echo $profile_data['college'] ?>
-            </td>
-        </tr>
-        <tr>
-            <td>Distance to college in KM:</td>
-            <td>
-                <?php echo $profile_data['distance'] ?> KM
-            </td>
-        </tr>
-        <tr>
-            <td>Lease length in months:</td>
-            <td>
-                <?php echo $profile_data['leaselength'] ?> months
-            </td>
-        </tr>
-        <tr>
-            <td>Monthly rent (max):</td>
-            <td>
-                €<?php echo $profile_data['rent'] ?>
-            </td>
-        </tr>
-        <tr>
-            <td>Deposit (max):</td>
-            <td>
-                €<?php echo $profile_data['deposit'] ?>
-            </td>
-        </tr>
-        <tr>
-            <td>Room type:</td>
-            <td>
-                <?php echo $profile_data['room'] ?>
-            </td>
-        </tr>
-        <tr>
-            <td>Move in date:</td>
-            <td>
-                <?php echo $profile_data['move_in'] ?>
-            </td>
-        </tr>
-        <tr>
-            <td>Amenities:</td>
-            <td>
-                <?php echo $profile_data['amenities'] ?>
-            </td>
-        </tr>
-        <tr>
-            <td>Rules:</td>
-            <td>
-                <?php echo $profile_data['rules'] ?>
-            </td>
-        </tr>
-        <tr>
-            <td>Nearby facilities:</td>
-            <td>
-                <?php echo $profile_data['nearby_facilities'] ?>
-            </td>
-        </tr>
-
+    <br><br><br><h3>House Image</h3>
+    <table>
+      <center>
 
     </table>
-    <a href="tel:+353871642535" class="btn btn_primary" itemprop="telephone"><i class="fa fa-phone"></i> +353-87-1642535</a>
-    <!-- <a href="landlord/PHPMySqlFileUpload/view.php" class="btn btn-info">Go to Uploaded Files</a> -->
-
-<?php
-if (isset($_SESSION['username'])) {
-  $username = $_SESSION['username'];
-  $users = $mysqli->query("SELECT * FROM users WHERE username='$username'");
-   while ($user_data = $users->fetch_assoc()) { ?>
-
-     <form method="post" name="make_match" action="make-match.php?user=<?php echo $user_data['user_id'] ?>">
-     <input type="hidden" name="landlord_id" value="<?php echo $profile_data['user_id'] ?>">
-     <input type="hidden" name="tenant_id" value="<?php echo $user_data['user_id'] ?>">
-
-     <input type="submit" name="make-relationship" value="make match" />
-
-<?php }
-}
-?>
-</form>
-
-
-</center>
-
+    <a href="landlord/PHPMySqlFileUpload/view.php" class="btn btn-info">Show Uploaded Files</a>
+  </center>
   <script>
-
-  // window.onload = function(){ document.forms['make_match'].submit(); }
-
   // Script to open and close sidebar
   function w3_open() {
      document.getElementById("mySidebar").style.display = "block";

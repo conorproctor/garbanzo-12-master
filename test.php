@@ -56,7 +56,7 @@ session_start();
   </style>
 
 
-  <title>
+    <title>
         <?php echo $profile_data['username'] ?>'s Profile</title>
 </head>
   <!-- Avatar image in top left corner -->
@@ -92,7 +92,7 @@ session_start();
                          </div>
                        </nav>
                        </body>
-                      <?php }
+                     <?php }
                       }
                     ?>
                     <!-- Top menu on small screens -->
@@ -113,78 +113,79 @@ session_start();
         if ($user == $visitor ) { ?>
         <?php }
         ?>
-    </h3>
+    </h3></center>
+
+
     <table id=landlord-box>
       <tr>
           <td>House address:</td>
           <td>
-              <?php echo $profile_data['address'] ?>
+              <?php echo $user_data['address'] ?>
           </td>
       </tr>
       <tr>
             <td>Nearest College:</td>
             <td>
-                <?php echo $profile_data['college'] ?>
+                <?php echo $user_data['college'] ?>
             </td>
         </tr>
         <tr>
             <td>Distance to college in KM:</td>
             <td>
-                <?php echo $profile_data['distance'] ?> KM
+                <?php echo $user_data['distance'] ?> KM
             </td>
         </tr>
         <tr>
             <td>Lease length in months:</td>
             <td>
-                <?php echo $profile_data['leaselength'] ?> months
+                <?php echo $user_data['leaselength'] ?> months
             </td>
         </tr>
         <tr>
             <td>Monthly rent (max):</td>
             <td>
-                €<?php echo $profile_data['rent'] ?>
+                €<?php echo $user_data['rent'] ?>
             </td>
         </tr>
         <tr>
             <td>Deposit (max):</td>
             <td>
-                €<?php echo $profile_data['deposit'] ?>
+                €<?php echo $user_data['deposit'] ?>
             </td>
         </tr>
         <tr>
             <td>Room type:</td>
             <td>
-                <?php echo $profile_data['room'] ?>
+                <?php echo $user_data['room'] ?>
             </td>
         </tr>
         <tr>
             <td>Move in date:</td>
             <td>
-                <?php echo $profile_data['move_in'] ?>
+                <?php echo $user_data['move_in'] ?>
             </td>
         </tr>
         <tr>
             <td>Amenities:</td>
             <td>
-                <?php echo $profile_data['amenities'] ?>
+                <?php echo $user_data['amenities'] ?>
             </td>
         </tr>
         <tr>
             <td>Rules:</td>
             <td>
-                <?php echo $profile_data['rules'] ?>
+                <?php echo $user_data['rules'] ?>
             </td>
         </tr>
         <tr>
             <td>Nearby facilities:</td>
             <td>
-                <?php echo $profile_data['nearby_facilities'] ?>
+                <?php echo $user_data['nearby_facilities'] ?>
             </td>
         </tr>
 
 
-</table>
-  </center>
+    </table>
     <center><br><br><a href="PHPMySqlFileUpload/view.php" class="btn btn-info">Show Uploaded Swipe Card Image</a>
     <!-- <a href="TinderCardImg/view1.php" class="btn btn-info">Show Uploaded File</a> -->
 </center>

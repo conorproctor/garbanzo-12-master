@@ -276,7 +276,7 @@ fieldset[disabled] .btn-warning.active {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9534f', endColorstr='#ffc12e2a', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
   background-repeat: repeat-x;
-  border-color: #b92c28;
+  border-color: #cdebf9;
 }
 .btn-danger:hover,
 .btn-danger:focus {

@@ -10,12 +10,21 @@ session_start();?>
             <link rel="stylesheet" href="css/style.css" />
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <body style="background-color:black">
+              <link rel="stylesheet" href="css/style.css" />
+              <meta name="viewport" content="width=device-width, initial-scale=1">
+              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+              <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+              <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+              <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+              <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
             <br><br><img src="img\logoHome.jpg" style="width:75%">
             <style>
-            h1{
+            h1,p{
               color: white;
             }
-                .button {
+  .button {
                     background-color: #4CAF50;
                     /* Green */
                     border: none;
@@ -29,7 +38,6 @@ session_start();?>
                     cursor: pointer;
                 }
 
-
                 .button5 {
                     border-radius: 50%;
                 }
@@ -37,64 +45,12 @@ session_start();?>
     </head>
 
     <body>
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <style>
-            .h2 {
-                color: white;
-            }
-
-            .button {
-                display: inline-block;
-                border-radius: 13px;
-                background-color: gray;
-                border: none;
-                color: #FFFFFF;
-                text-align: center;
-                font-size: 28px;
-                padding: 20px;
-                width: 300px;
-                transition: all 0.5s;
-                cursor: pointer;
-                margin: 15px;
-            }
-
-            .button span {
-                cursor: pointer;
-                display: inline-block;
-                position: relative;
-                transition: 0.5s;
-            }
-
-            .button span:after {
-                content: '\00bb';
-                position: absolute;
-                opacity: 0;
-                top: 0;
-                right: -20px;
-                transition: 0.5s;
-            }
-
-            .button:hover span {
-                padding-right: 25px;
-            }
-
-            .button:hover span:after {
-                opacity: 1;
-                right: 0;
-            }
-        </style>
-        </head>
-
-        <body>
-
             <br><br><h1>HouseFindr</h1>
-            <br><br><br><br><br><br><br><br><br><br>
-            <a class="button" style="vertical-align:middle" href="choice.php"><span> Get started </span></a>
-
-        </body>
-        <!--  <a class="w3-button w3-XXL w3-blue" href="choice.php">Click to get started!</a>
--->
+          <br><br><p>Giving students the best chance of obtaining a house for the academic year & making it effortless for landlords to manage their tenants</p>
+          <center><div class="w3-container" style="margin-top:60px">
+              <h4 class=" w3-text-black">Set up your profile and improve your chances of matching the desired tenant!</h4>
+             <br> <a class="btn btn-primary btn-lg enabled" href="registration.php"  role="button" aria-disabled="true">Click here to get started</a>
         </div>
     </body>
-    </center>
+
 </html>

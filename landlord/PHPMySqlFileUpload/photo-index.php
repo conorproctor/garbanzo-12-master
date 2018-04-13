@@ -9,35 +9,29 @@ session_start();
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>HouseFindr</title>
-		<style>
-		body{
-			background-image: url(http://www.joburgchiropractor.co.za/images/background.jpg);
-		}
-
-	</style>
 
 	<?php
 	if (isset($_SESSION['username'])) {
 		$username = $_SESSION['username'];
 		$landlord = $mysqli->query("SELECT * FROM landlord WHERE username='$username'");
 		 while ($user_data = $landlord->fetch_assoc()) { ?>
-
-					 <b><?php echo $user_data['user_id'] ?></b>
-			<?php echo $user_data['username'] ?><br>
 		<?php }
 	 }
 	 ?>
-
-
 
 		<!-- Bootstrap -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<a href="/garbanzo-12-master/landlord/index.php" class="btn btn-info">Go Back</a>
 	</header>
 	<body>
+		<style>
+		body{
+			background-color: #cdebf9;
+		}
+</style>
 		<div class="container">
 			<div class="page-header">
-				<center><h1>Upload House Images <br><small>Populate your profile with some images of your house</small> </h1></center>
+				<center><h1>Swipe Card Image <br><small>Upload the picture of your house to your profile with the image of your house</small> </h1></center>
 			</div>
 			<div class="panel panel-default">
 				<div class="panel-body">
@@ -57,10 +51,10 @@ session_start();
 							 }
 							 ?>
 
-							<p class="help-block"><span class="label label-info">Note</span>  Please only select file types: (.jpg, .jpeg, .png, .gif) to upload with the size of 100KB only.</p>
+							<p class="help-block"><span class="label label-info">Note</span>  Please only select the following file types: (.jpg, .jpeg, .png, .gif) and to the size of 100KB only.</p>
 						</div>
-						<button type="submit" class="btn btn-primary" name="btnSubmit" >Upload Images</button>
-						<a href="view.php" class="btn btn-info">Show Uploaded Images</a>
+						<center><button type="submit" class="btn btn-primary" name="btnSubmit" >Upload Swipe Card Image</button></center>
+						<!-- <a href="view.php" class="btn btn-info">Show Uploaded Image</a> -->
 					</form>
 					<br/>
 					<label for="Progressbar">Progress:</label>
