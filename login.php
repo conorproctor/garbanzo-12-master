@@ -1,6 +1,7 @@
 <?php
 include 'connection.php';
   session_start();
+
 ?>
  <!DOCTYPE html>
  <html>
@@ -15,13 +16,14 @@ include 'connection.php';
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
- <style>
+
  <style>
  body{
     background-color: #cdebf9;}
+
     h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
     h1{color:blue}
-    body {font-size: 16px;}
+
     .w3-half img {margin-bottom: -6px;margin-top: 16px;opacity: 0.8;cursor: pointer}
     .w3-half img:hover {opacity: 1}
 
@@ -45,14 +47,14 @@ include 'connection.php';
 
 
          <!-- Avatar image in top left corner -->
-         <center><a href="login.php"><img src="img\logo1.jpg" style="width:50%"></a></center>
+         <br><center><a href="login.php"><img src="img\logo1.jpg" style="width:50%"></a></center>
          <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
 
          <div class="w3-bar-block">
              <a href="login.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-home"></i>  Home</a>
              <a href="index.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-user"></i>  Profile</a>
              <a href="swiping.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-hand-pointer-o"></i>  Start swiping</a>
-             <a href="matches.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-handshake-o"></i>  Your matches</a>
+             <a href="tenant-matches.php?user=comer" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-handshake-o"></i>  Your matches</a>
              <a href="logout.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><span class="glyphicon glyphicon-log-out"></span> Log out </a>
 
          </div>
@@ -108,7 +110,7 @@ include 'connection.php';
              <p>Are you a student/landlord who hates the hassle of sorting out accommodation for the academic year? </p>
              <p>Yes? Great! - Then look no further, this app has it all. </p>
              <p>For the students of colleges around Ireland, accommodation seems to be scarce. Some students are living in hostels, on couches or worse again, commuting for up to 4 hours! This is not practical & is very off-putting for first year students. First year students are effected the most and this app helps alleviate this problem for these students. </p>
-             <p>For the Landlords in these cities with colleges, it's a nightmare for them too. Landlords have their preferences for who stays in their properties, some more picky than others. This app has landlords who are just looking for students to stay in their houses - therefore reducing the amount of homeless students substancially. </p>
+             <p>For the Landlords in these cities with colleges, it's a nightmare for them too. Landlords have their preferences for who stays in their properties, some more picky than others. This app has landlords who are just looking for students to stay in their houses - therefore reducing the amount of homeless students substantially. </p>
          </div>
 
          <!-- Swiping -->

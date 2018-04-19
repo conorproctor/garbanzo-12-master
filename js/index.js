@@ -17,7 +17,6 @@
       clone.id = "card_" + data[i].id;
       clone.querySelector('img').src = data[i].src;
       clone.querySelector('.name').innerHTML = data[i].name;
-
       if(i == 0) {
         clone.classList.add('current');
       }

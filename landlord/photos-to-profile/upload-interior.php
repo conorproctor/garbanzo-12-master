@@ -10,13 +10,15 @@
 
 		if(isset($_FILES["files"])==false)
 		{
-			echo "<b>Please select the file to upload!</b>";
+			echo "<b>Please select the files to upload!</b>";
 			return;
 		}
-				$conn = mysqli_connect("localhost","root","","cp");
 
-				$landlord = $_POST["landlord_id"];
-				echo $landlord;
+		$conn = mysqli_connect("localhost","root","","cp");
+
+		$landlord = $_POST["landlord_id"];
+
+	 echo $landlord;
 
 		foreach($_FILES["files"]["tmp_name"] as $key=>$tmp_name)
 		{
@@ -39,7 +41,7 @@
 				$uploadThisFile = false;
 			}
 
-			if(file_exists("Upload/".$_FILES["files"]["name"][$key]))
+			if(file_exists("UploadedHouseImages/".$_FILES["files"]["name"][$key]))
 			{
 				array_push($errors, "File already exists. Name:- ". $file_name);
 				$uploadThisFile = false;
@@ -48,9 +50,9 @@
 			if($uploadThisFile){
 				$filename=basename($file_name,$ext);
 				$newFileName=$filename.$ext;
-				move_uploaded_file($_FILES["files"]["tmp_name"][$key],"Upload/".$newFileName);
+				move_uploaded_file($_FILES["files"]["tmp_name"][$key],"UploadedHouseImages/".$newFileName);
 
-				$query = "INSERT INTO swipe_image(landlord_id, FilePath, FileName) VALUES('$landlord', 'Upload','".$newFileName."')";
+				$query = "INSERT INTO house-images(landlord_id, FilePath, FileName) VALUES('$landlord', 'Upload','".$newFileName."')";
 
 				mysqli_query($conn, $query);
 			}

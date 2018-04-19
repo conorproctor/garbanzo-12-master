@@ -44,9 +44,9 @@ if (isset($_GET['user'])) {
       <div class="navbar-header">
             </div></center>
       <!-- Collection of nav links and other content for toggling -->
-      <div class="w3-bar-block"><br><br><br><br>
+      <div class="w3-bar-block">
        <a href="index.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-arrow-left"></i> Back to interface </a></i>
-       <a href="profile.php?user=<?php echo $profile_data['username'] ?>" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-user"></i> Edit Profile Details</a>
+       <a href="profile.php?user=<?php echo $profile_data['username'] ?>" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-user"></i> Profile Details</a>
        <a href="login.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-home"></i> Back to dashboard </a>
        <a href="logout.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><span class="glyphicon glyphicon-log-out"></span> Log out </a>
       </div>
@@ -71,23 +71,23 @@ if (isset($_GET['user'])) {
     ?>
     <form method="post" action="update-profile-action.php?user=<?php echo $user_data['username'] ?>">
       <h4>Your personal details</h4>
-      <label>Name:</label><br><input type="text" name="full_name" value="<?php echo $user_data['full_name'] ?>" /><br>
-      <label>Age:</label><br><input type="text" name="age" value="<?php echo $user_data['age'] ?>"/><br>
-      <label>Gender:</label><br><input type="text" name="gender" value="<?php echo $user_data['gender'] ?>" /><br>
-      <label>Address:</label><br> <input type="text" name="address" value="<?php echo $user_data['address'] ?>" /><br><br>
+      <label>Name:</label><br><input class="form-control" type="text" name="full_name" value="<?php echo $user_data['full_name'] ?>" /><br>
+      <label>Age:</label><br><input class="form-control" type="text" name="age" value="<?php echo $user_data['age'] ?>"/><br>
+      <label>Gender:</label><br><input class="form-control" type="text" name="gender" value="<?php echo $user_data['gender'] ?>" /><br>
+      <label>Address:</label><br> <input class="form-control"  type="text" name="address" value="<?php echo $user_data['address'] ?>" /><br><br>
       <h4>College details</h4>
-      <label>College:</label><br> <input type="text" name="college" value="<?php echo $user_data['college'] ?>" /><br>
-      <label>Course:</label><br> <input type="text" name="course" value="<?php echo $user_data['course'] ?>" /><br>
-      <label>Year:</label><br> <input type="text" name="year" value="<?php echo $user_data['year'] ?>" /><br>
+      <label>College:</label><br> <input class="form-control" type="text" name="college" value="<?php echo $user_data['college'] ?>" /><br>
+      <label>Course:</label><br> <input class="form-control" type="text" name="course" value="<?php echo $user_data['course'] ?>" /><br>
+      <label>Year:</label><br> <input class="form-control" type="text" name="year" value="<?php echo $user_data['year'] ?>" /><br>
       <label>Max distance from college (kms):</label><br> <input type="text" name="distance" value="<?php echo $user_data['distance'] ?>" /><br><br>
       <h4>House details</h4>
-      <label>Lease length(months):</label><br> <input type="text" name="leaselength" value="<?php echo $user_data['leaselength'] ?>" /><br>
-      <label>Monthly rent:</label><br> <input type="text" name="rent" value="<?php echo $user_data['rent'] ?>" /><br>
-      <label>Deposit:</label><br> <input type="text" name="deposit" value="<?php echo $user_data['deposit'] ?>" /><br>
-      <label>Move in date:</label><br> <input type="text" name="move_in" value="<?php echo $user_data['move_in'] ?>" /><br>
-      <label>Room type:</label><br> <input type="text" name="room" value="<?php echo $user_data['room'] ?>" /><br>
-      <label>Amenities:</label><br> <input type="text" name="amenities" value="<?php echo $user_data['amenities'] ?>" /><br>
-      <label>Nearby facilities:</label><br> <input type="text" name="nearby_facilities" value="<?php echo $user_data['nearby_facilities'] ?>" /><br>
+      <label>Lease length(months):</label><br> <inputclass="form-control"  type="text" name="leaselength" value="<?php echo $user_data['leaselength'] ?>" /><br>
+      <label>Monthly rent:</label><br> <input class="form-control"  type="text" name="rent" value="<?php echo $user_data['rent'] ?>" /><br>
+      <label>Deposit:</label><br> <input class="form-control"  type="text" name="deposit" value="<?php echo $user_data['deposit'] ?>" /><br>
+      <label>Move in date:</label><br> <input class="form-control" type="text" name="move_in" value="<?php echo $user_data['move_in'] ?>" /><br>
+      <label>Room type:</label><br> <input class="form-control" type="text" name="room" value="<?php echo $user_data['room'] ?>" /><br>
+      <label>Amenities:</label><br> <input class="form-control" type="text" name="amenities" value="<?php echo $user_data['amenities'] ?>" /><br>
+      <label>Nearby facilities:</label><br> <input class="form-control" type="text" name="nearby_facilities" value="<?php echo $user_data['nearby_facilities'] ?>" /><br>
 
       <br>
        <input type="submit" name="update_profile" value="Update Profile" />

@@ -77,7 +77,7 @@ include 'connection.php';
       <center>
 
     </table>
-    <a href="landlord/PHPMySqlFileUpload/view.php" class="btn btn-info">Show Uploaded Files</a>
+    <a href="landlord/UploadedHouseImages/view-interior.php" class="btn btn-info">Show Uploaded Files</a>
   </center>
   <script>
   // Script to open and close sidebar

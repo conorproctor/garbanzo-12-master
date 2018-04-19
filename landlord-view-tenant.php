@@ -1,10 +1,10 @@
 <?php
 include 'connection.php';
   session_start();
-   if (isset($_GET['landlord']))
+   if (isset($_GET['tenant']))
     {
-              $user = $_GET['landlord'];
-              $get_user = $mysqli->query("SELECT * FROM landlord WHERE user_id = '$user'");
+              $user = $_GET['tenant'];
+              $get_user = $mysqli->query("SELECT * FROM users WHERE user_id = '$user'");
               if ($get_user->num_rows == 1) {
                   $profile_data = $get_user->fetch_assoc();
                 }}?>
@@ -93,79 +93,105 @@ include 'connection.php';
         ?>
 
     <center><br><br><br><h3>House Information</h3>
-    <table id="tenant-view-box">
+      <table id="tenant-view-box">
+        <center>
+          <tr>
+               <td> Name:</td>
+              <td>
+                  <?php echo $profile_data['full_name'] ?>
+              </td>
+          </tr>
+          <tr>
+              <td>Age:</td>
+              <td>
+                  <?php echo $profile_data['age'] ?>
+              </td>
+          </tr>
 
+          <tr>
+              <td>Gender:</td>
+              <td>
+                  <?php echo $profile_data['gender'] ?>
+              </td>
+          </tr>
 
-        <tr>
-            <td>House address:</td>
-            <td>
-                <?php echo $profile_data['address'] ?>
-            </td>
-        </tr>
+          <tr>
+              <td>Address:</td>
+              <td>
+                  <?php echo $profile_data['address'] ?>
+              </td>
+          </tr>
 
-        <tr>
-            <td>Nearest College:</td>
-            <td>
-                <?php echo $profile_data['college'] ?>
-            </td>
-        </tr>
-        <tr>
-            <td>Distance to college in KM:</td>
-            <td>
-                <?php echo $profile_data['distance'] ?> KM
-            </td>
-        </tr>
-        <tr>
-            <td>Lease length in months:</td>
-            <td>
-                <?php echo $profile_data['leaselength'] ?> months
-            </td>
-        </tr>
-        <tr>
-            <td>Monthly rent (max):</td>
-            <td>
-                €<?php echo $profile_data['rent'] ?>
-            </td>
-        </tr>
-        <tr>
-            <td>Deposit (max):</td>
-            <td>
-                €<?php echo $profile_data['deposit'] ?>
-            </td>
-        </tr>
-        <tr>
-            <td>Room type:</td>
-            <td>
-                <?php echo $profile_data['room'] ?>
-            </td>
-        </tr>
-        <tr>
-            <td>Move in date:</td>
-            <td>
-                <?php echo $profile_data['move_in'] ?>
-            </td>
-        </tr>
-        <tr>
-            <td>Amenities:</td>
-            <td>
-                <?php echo $profile_data['amenities'] ?>
-            </td>
-        </tr>
-        <tr>
-            <td>Rules:</td>
-            <td>
-                <?php echo $profile_data['rules'] ?>
-            </td>
-        </tr>
-        <tr>
-            <td>Nearby facilities:</td>
-            <td>
-                <?php echo $profile_data['nearby_facilities'] ?>
-            </td>
-        </tr>
+          <tr>
+              <td>College:</td>
+              <td>
+                  <?php echo $profile_data['college'] ?>
+              </td>
+          </tr>
 
+          <tr>
+              <td>Course:</td>
+              <td>
+                  <?php echo $profile_data['course'] ?>
+              </td>
+          </tr>
 
-    </table>
+          <tr>
+              <td>Year:</td>
+              <td>
+                  <?php echo $profile_data['year'] ?>
+              </td>
+          </tr>
+          <tr>
+              <td>Distance from college in KM:</td>
+              <td>
+                  <?php echo $profile_data['distance'] ?> KM
+              </td>
+          </tr>
+          <tr>
+              <td>Lease length in months:</td>
+              <td>
+                  <?php echo $profile_data['leaselength'] ?> months
+              </td>
+          </tr>
+          <tr>
+              <td>Monthly rent (max):</td>
+              <td>
+                  €<?php echo $profile_data['rent'] ?>
+              </td>
+          </tr>
+          <tr>
+              <td>Deposit (max):</td>
+              <td>
+                  €<?php echo $profile_data['deposit'] ?>
+              </td>
+          </tr>
+          <tr>
+              <td>Move in date:</td>
+              <td>
+                  <?php echo $profile_data['move_in'] ?>
+              </td>
+          </tr>
+          <tr>
+              <td>Room type:</td>
+              <td>
+                  <?php echo $profile_data['room'] ?>
+              </td>
+          </tr>
+          <tr>
+              <td>Desired amenities:</td>
+              <td>
+                  <?php echo $profile_data['amenities'] ?>
+              </td>
+          </tr>
+          <tr>
+              <td>Desired nearby facilities:</td>
+              <td>
+                  <?php echo $profile_data['nearby_facilities'] ?>
+              </td>
+          </tr>
+
+      </table>
     <!--<a href="tel:+353871642535" class="btn btn_primary" itemprop="telephone"><i class="fa fa-phone"></i> +353-87-1642535</a>
     <!-- <a href="landlord/PHPMySqlFileUpload/view.php" class="btn btn-info">Go to Uploaded Files</a> -->
 
@@ -179,7 +205,7 @@ if (isset($_SESSION['username'])) {
      <input type="hidden" name="landlord_id" value="<?php echo $profile_data['user_id'] ?>">
      <input type="hidden" name="tenant_id" value="<?php echo $user_data['user_id'] ?>">
 
-     <br><input type="submit" name="make-relationship" value="Check to see if you've made a match" >
+     <input type="submit" name="see-relationship" value="Check to see if you've made match" />
 
 <?php }
 }

@@ -47,7 +47,7 @@ if (isset($_GET['user'])) {
         <!-- Collection of nav links and other content for toggling -->
         <div class="w3-bar-block"><br>
          <a href="index.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-arrow-left"></i> Back to interface </a></i>
-         <a href="landlord-profile.php?user=<?php echo $user_data['username'] ?>" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-user"></i> Edit House Details</a>
+         <a href="landlord-profile.php?user=<?php echo $user_data['username'] ?>" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-user"></i>  House Details</a>
          <a href="login.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-home"></i> Back to dashboard </a>
          <a href="logout.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><span class="glyphicon glyphicon-log-out"></span> Log out </a>
         </div>
@@ -69,34 +69,29 @@ if (isset($_GET['user'])) {
       if ($user == $visitor ) { ?>
       <?php }
       ?>
-    <center>  <br><br><br><h3>Edit House Information</h3>
+    <center>  <br><br><br><br><h3>Edit House Information</h3>
     <form method="post" action="update-profile-action.php?user=<?php echo $user_data['username'] ?>">
-      <label>House address:</label><br>
-      <input type="text" name="address"  value="<?php echo $user_data['address'] ?>" /><br><br>
-      <!-- <select name="cars"> -->
-        <!-- <option value="volvo">Volvo</option> -->
-        <!-- <option value="saab">Saab</option> -->
-        <!-- <option value="fiat">Fiat</option> -->
-        <!-- <option value="audi">Audi</option> -->
-      <!-- </select> -->
-  <br><br>
-      <label>Nearest College:</label><br>
-      <input type="text" name="college" value="<?php echo $user_data['college'] ?>" /><br>
+      <label>House address:</label><br><input class="form-control" type="text" name="address"  value="<?php echo $user_data['address'] ?>" /><br>
+      <label>Nearest College:</label><br><input class="form-control"type="text" name="college" value="<?php echo $user_data['college'] ?>" /><br>
+      <label>Distance to college (kms):</label><br><input class="form-control" type="text" name="distance" value="<?php echo $user_data['distance'] ?>" /><br><br>
+      <label>Lease length(months):</label><br> <input class="form-control" type="text" name="leaselength" value="<?php echo $user_data['leaselength'] ?>" /><br>
+      <label>Monthly rent:</label><br> <input class="form-control" type="text" name="rent" value="<?php echo $user_data['rent'] ?>" /><br>
+      <label>Deposit:</label><br> <input class="form-control" type="text" name="deposit" value="<?php echo $user_data['deposit'] ?>" /><br>
+      <label>Room type:</label><br> <input class="form-control" type="text" name="room" value="<?php echo $user_data['room'] ?>" /><br>
+      <label>Move in date:</label><br> <input class="form-control" type="text" name="move_in" value="<?php echo $user_data['move_in'] ?>" /><br>
+      <label>Amenities:</label><br> <input class="form-control" type="text" name="amenities" value="<?php echo $user_data['amenities'] ?>" /><br>
+      <label>Rules:</label><br> <input class="form-control" type="text" name="rules" value="<?php echo $user_data['rules'] ?>" /><br>
+      <label>Nearby facilities:</label><br> <input class="form-control" type="text" name="nearby_facilities" value="<?php echo $user_data['nearby_facilities'] ?>" /><br><br>
+      <label>Phone number:</label><br> <input class="form-control" type="text" name="number" value="<?php echo $user_data['number'] ?>" /><br><br>
 
-      <label>Distance to college (kms):</label><br> <input type="text" name="distance" value="<?php echo $user_data['distance'] ?>" /><br><br>
-      <label>Lease length(months):</label><br> <input type="text" name="leaselength" value="<?php echo $user_data['leaselength'] ?>" /><br>
-      <label>Monthly rent:</label><br> <input type="text" name="rent" value="<?php echo $user_data['rent'] ?>" /><br>
-      <label>Deposit:</label><br> <input type="text" name="deposit" value="<?php echo $user_data['deposit'] ?>" /><br>
-      <label>Room type:</label><br> <input type="text" name="room" value="<?php echo $user_data['room'] ?>" /><br>
-      <label>Move in date:</label><br> <input type="text" name="move_in" value="<?php echo $user_data['move_in'] ?>" /><br>
-      <label>Amenities:</label><br> <input type="text" name="amenities" value="<?php echo $user_data['amenities'] ?>" /><br>
-      <label>Rules:</label><br> <input type="text" name="rules" value="<?php echo $user_data['rules'] ?>" /><br>
-      <label>Nearby facilities:</label><br> <input type="text" name="nearby_facilities" value="<?php echo $user_data['nearby_facilities'] ?>" /><br><br>
-      <!-- <a href="TinderCardImg/photo-index1.php"class="btn btn-info"> Upload photo to tinder card </a><br> -->
-      <a href="PHPMySqlFileUpload/photo-index.php"class="btn btn-info"> Upload house photo to swipe card</a>
 
-      <br><br>
-       <input type="submit" name="update_profile" value="Update Profile" />
+      <center><a href="PHPMySqlFileUpload/photo-index.php"class="btn btn-info"> Upload house photo to swipe card</a><br><br>
+      <a href="photos-to-profile/photo-index-interior.php"class="btn btn-info"> Upload photos of house to profile </a><br></center>
+
+      <br>
+       <!-- <input type="submit" name="update_profile" value="Update Profile" /> -->
+       <button type="submit" class="btn btn-primary" name="update_profile" >Update Profile</button></center>
+
      </form>
 
 </center>

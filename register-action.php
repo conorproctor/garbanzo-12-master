@@ -5,7 +5,7 @@ include 'connection.php';
       $email = $_POST['email'];
       $username = $_POST['username'];
       $password = $_POST['password'];
-  //    $name = $_POST['full_name'];
+
       $register = $mysqli->query("INSERT INTO users (email, username, password) VALUES ('$email', '$username', '". md5($password)."')");
   if ($register) {
 

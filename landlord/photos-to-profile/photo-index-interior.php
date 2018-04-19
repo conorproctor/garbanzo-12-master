@@ -46,7 +46,7 @@ session_start();
       <!-- Collection of nav links and other content for toggling -->
       <div class="w3-bar-block">
        <a href="..\index.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-arrow-left"></i> Back to interface </a></i>
-       <a href="javascript:history.back()" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-user"></i> Profile Details</a>
+       <a href="javascript:history.back()" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-user"></i> Back to profile details</a>
        <a href="..\login.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-home"></i> Back to dashboard </a>
        <a href="..\logout.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><span class="glyphicon glyphicon-log-out"></span> Log out </a>
       </div>
@@ -66,11 +66,11 @@ session_start();
     <br><br>
 		<div class="container">
 			<div class="page-header">
-				<center><h1>Swipe Card Image <br><small>Upload the picture of your house to your profile</small> </h1></center>
+				<center><h1>House interior images <br><small>Upload the pictures of the interior of your house for tenants to view</small> </h1></center>
 			</div>
 			<div class="panel panel-default">
 				<div class="panel-body">
-					<form method="post" enctype="multipart/form-data" name="formUploadFile" id="uploadForm" action="upload.php">
+					<form method="post" enctype="multipart/form-data" name="formUploadFile" id="uploadForm" action="upload-interior.php">
 						<div class="form-group">
 							<label for="exampleInputFile">Select files to upload:</label>
 							<input type="file" id="exampleInputFile" name="files[]" multiple="multiple">
@@ -80,7 +80,7 @@ session_start();
 								$landlord = $mysqli->query("SELECT * FROM landlord WHERE username='$username'");
 								 while ($user_data = $landlord->fetch_assoc()) { ?>
 
-									 <input type="hidden" id="landlordInput" name="landlord_id" value="<?php $user_data['user_id'] ?>">
+									 <input type="hidden" id="landlordInput" name="landlord_id">
 
 								<?php }
 							 }
@@ -88,13 +88,13 @@ session_start();
 
 							<p class="help-block"><span class="label label-info">Note</span>  Please only select the following file types: (.jpg, .jpeg, .png, .gif) and to the size of 100KB only.</p>
 						</div>
-						<center><button type="submit" class="btn btn-primary" name="btnSubmit" >Upload Swipe Card Image</button></center>
+						<center><button type="submit" class="btn btn-primary" name="btnSubmit" >Upload house images</button></center>
 						<!-- <a href="view.php" class="btn btn-info">Show Uploaded Image</a> -->
 					</form>
 					<br/>
 					<label for="Progressbar">Progress:</label>
 					<div class="progress" id="Progressbar">
-						<div class="progress-bar progress-bar active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0%" id="divProgressBar">
+						<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0%" id="divProgressBar">
 							<span class="sr-only">45% Complete</span>
 						</div>
 					</div>
@@ -107,7 +107,6 @@ session_start();
 		<script src="js/jQuery.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="js/bootstrap.min.js"></script>
-
 		<script src="js/jQuery.Form.js"></script>
 
 		<script type="text/javascript">

@@ -17,6 +17,8 @@ session_start();?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 
     <!-- <link rel="stylesheet" href="index.css"> -->
 
@@ -39,6 +41,7 @@ session_start();?>
           <a href="login.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-home"></i>  Home</a>
             <a href="index.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-user"></i>  Profile</a>
             <a href="matches.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-handshake-o"></i>  Your matches</a>
+            <a href="logout.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><span class="glyphicon glyphicon-log-out"></span> Log out </a>
 
         </div>
     </nav>
@@ -83,26 +86,16 @@ session_start();?>
     <?php
     if (isset($_SESSION['username'])) {
       $username = $_SESSION['username'];
-      // $users = $mysqli->query("SELECT l.user_id, l.address, l.rent, u.FileName FROM landlord l JOIN userfiles u on u.landlord_id = l.user_id");
-
-
-      // SELECT l.user_id, l.address, l.rent, uf.FileName FROM landlord l, users u, userfiles uf WHERE l.rent=u.rent AND u.username="cp"
-
-
-      $users = $mysqli->query("SELECT l.user_id, l.address, l.rent, uf.FileName from landlord l, users u, userfiles uf where (l.rent=u.rent) > 0 AND u.username='cp'");
-//IF THE USER MEETS THE CRITERIA FOR THESE 3 COLUMNS THEN THIS MATCH WILL BE AT THE TOP OF THE LIST OF  DESCENDING
-// ORDER BY (l.rent=u.rent + l.college=u.college + l.deposit=u.deposit) DESC
-
-
+      $users = $mysqli->query("SELECT DISTINCT l.user_id, l.address, l.rent, uf.FileName from  users u, landlord l JOIN userfiles uf ON uf.landlord_id = l.user_id where l.rent=u.rent or l.college=u.college or l.room=u.room AND u.username='$username'");
        while ($user_data = $users->fetch_assoc()) { ?>
 
          <!-- <?php echo $user_data['user_id'] ?> -->
 
          <script>
           var js_array<?php echo $user_data['user_id'] ?> = [<?php echo '"'.implode('","',  $user_data ).'"' ?>];
-       //console.log(js_array<?php echo $user_data['user_id'] ?>);
+          //console.log(js_array<?php echo $user_data['user_id'] ?>);
           data.push(js_array<?php echo $user_data['user_id'] ?>)
-       </script>
+         </script>
 
      <?php }
     }
