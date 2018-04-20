@@ -84,7 +84,7 @@ session_start();
                           <a href="index.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-arrow-left"></i> Back to interface </a></i>
                           <a href="edit-landlord-profile.php?user=<?php echo $profile_data['username'] ?>" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-user"></i> Edit House Details</a>
                           <a href="login.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-home"></i> Back to dashboard </a>
-                          <a href="UploadedHouseImages/photo-index-interior.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-image"></i> Upload house photos</a>
+                          <a href="photos-to-profile/photo-index-interior.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-image"></i> Upload house photos</a>
                           <a href="PHPMySqlFileUpload/photo-index.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-image"></i> Upload swipe photo</a>
                           <a href="logout.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><span class="glyphicon glyphicon-log-out"></span> Log out </a>
 

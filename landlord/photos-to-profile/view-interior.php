@@ -85,11 +85,13 @@ session_start();
 						$username = $_SESSION['username'];
 						$landlord = $mysqli->query("SELECT * FROM landlord WHERE username='$username'");
 						 while ($user_data = $landlord->fetch_assoc()) {
+
 							 $landlord_id =  $user_data['user_id'] ?>
+							 <!-- <?php echo $landlord_id ?> -->
 							 <?php
 			 					$conn = mysqli_connect("localhost","root","","cp");
 
-			 					$query = "SELECT * FROM userfiles WHERE landlord_id = $landlord_id";
+			 					$query = "SELECT * FROM houseimages WHERE landlord_id = $landlord_id";
 
 
 			 					$result = mysqli_query($conn, $query);

@@ -14,7 +14,7 @@ include 'connection.php';
 <head>
     <meta charset="UTF-8">
     <title>Housefindr</title>
-    <h1>Matches</h1>
+
     <link rel="stylesheet" href="css/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -83,11 +83,11 @@ include 'connection.php';
        <!-- Overlay effect when opening sidebar on small screens -->
        <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
        <div class="w3-main" style="margin-left:340px;margin-right:40px"></div>
-          <?php
+          <!-- <?php
           $visitor = $_SESSION['username'];
           if ($user == $visitor ) { ?>
           <?php }
-          ?>
+          ?> -->
     <script>var data = []</script>
     <
     <!-- <?php echo $user ?> -->
@@ -96,7 +96,7 @@ include 'connection.php';
    <?php
    if (isset($_SESSION['username'])) {
      $username = $_SESSION['username'];
-     $users = $mysqli->query("SELECT DISTINCT m.landlord_id,l.username,l.address, l.number from matches m join landlord l on m.landlord_id=l.user_id where m.tenant_id='$user'");
+     $users = $mysqli->query("SELECT DISTINCT m.landlord_id,l.username,l.address,l.email, l.number from matches m join landlord l on m.landlord_id=l.user_id where m.tenant_id='$user'");
       while ($user_data = $users->fetch_assoc()) { ?>
 
         <script>

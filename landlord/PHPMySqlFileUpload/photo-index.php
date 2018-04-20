@@ -80,7 +80,9 @@ session_start();
 								$landlord = $mysqli->query("SELECT * FROM landlord WHERE username='$username'");
 								 while ($user_data = $landlord->fetch_assoc()) { ?>
 
-									 <input type="hidden" id="landlordInput" name="landlord_id" value="<?php $user_data['user_id'] ?>">
+									 <!-- <?php echo $user_data['user_id'] ?> -->
+									 <input type="hidden" id="landlordInput" name="landlord_id" value="<?php echo $user_data['user_id'] ?>">
+
 
 								<?php }
 							 }

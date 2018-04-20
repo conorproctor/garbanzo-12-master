@@ -3,11 +3,8 @@
             $landlord_id = $_POST['landlord_id'];
             $tenant_id = $_POST['tenant_id'];
 
-            $update_profile = $mysqli->query("REPLACE INTO matches (landlord_id, tenant_id) VALUES ('$landlord_id', '$tenant_id') ");
+            $update_profile = $mysqli->query("INSERT INTO matches (landlord_id, tenant_id) VALUES ('$landlord_id', '$tenant_id') ");
             echo "$landlord_id";
-
-// SET landlord_id = '$landlord_id', tenant_id = '$tenant_id' WHERE tenant_id = '$tenant_id'
-            // $register = $mysqli->query("INSERT INTO users (username, password) VALUES ('$username', '". md5($password)."')");
 
 
     if ($update_profile) {

@@ -51,7 +51,16 @@ include 'connection.php';
         text-align: left;
         background-color: #000000;
         color: white;
+
     }
+  .no-matches{
+    color:red;
+    text-align: center;
+  }
+  .table-sub{
+    background-color: green;
+    color: white ;
+  }
         </style>
 </head>
 <body>
@@ -83,11 +92,11 @@ include 'connection.php';
        <!-- Overlay effect when opening sidebar on small screens -->
        <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
        <div class="w3-main" style="margin-left:340px;margin-right:40px"></div>
-          <?php
+          <!-- <?php
           $visitor = $_SESSION['username'];
           if ($user == $visitor ) { ?>
           <?php }
-          ?>
+          ?> -->
     <script>var data = []</script>
     <!-- <?php echo $user ?> -->
 
@@ -95,20 +104,20 @@ include 'connection.php';
    <?php
    if (isset($_SESSION['username'])) {
      $username = $_SESSION['username'];
-     $users = $mysqli->query("SELECT DISTINCT m.landlord_id,l.username,l.address, l.number from matches m join landlord l on m.landlord_id=l.user_id where m.tenant_id='$user'");
+     $users = $mysqli->query("SELECT DISTINCT m.tenant_id,u.username, u.address, u.email, u.number from matches m join users u on m.tenant_id=u.user_id where m.landlord_id='4'");
       while ($user_data = $users->fetch_assoc()) { ?>
 
         <script>
-         var js_array<?php echo $user_data['landlord_id'] ?> = [<?php echo '"'.implode('","',  $user_data ).'"' ?>];
-      //console.log(js_array<?php echo  $user_data['landlord_id'] ?>);
-         data.push(js_array<?php echo $user_data['landlord_id'] ?>)
+         var js_array<?php echo $user_data['tenant_id'] ?> = [<?php echo '"'.implode('","',  $user_data ).'"' ?>];
+      //console.log(js_array<?php echo  $user_data['tenant_id'] ?>);
+         data.push(js_array<?php echo $user_data['tenant_id'] ?>)
       </script>
 
     <?php }
    }
    ?>
    <script>console.log(data)</script>
-  <script src="js/matching.js"></script>
+  <script src="js/matching-landlord.js"></script>
 
 
   <div id="tenant-match"></div>

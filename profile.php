@@ -55,9 +55,7 @@ include 'connection.php';
   <!-- Sidebar/menu -->
   <nav class="w3-sidebar w3-black w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
 
-
-
-      <!-- Avatar image in top left corner -->
+      <!-- Logo in top left corner -->
       <br><br><center><a href="login.php"><img src="img\logo1.jpg" style="width:50%"></a></center>
       <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
       <div class="navbar-header">
@@ -93,8 +91,7 @@ include 'connection.php';
         ?>
     </h3></center>
 
-    <table id="tenant-box">
-      <center>
+    <table id="tenant-table">
         <tr>
              <td> Name:</td>
             <td>

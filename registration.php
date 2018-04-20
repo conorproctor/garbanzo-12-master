@@ -57,9 +57,10 @@ session_start();
                      }
                     }
                     ?>
-                                                    <input type="text" name="email" placeholder="Email" required /><br>
-                                                    <input type="text" name="username" placeholder="Username" required /><br>
-                                                    <input type="password" name="password" placeholder="Password" required /><br>
+                                                    <input type="text" name="email" placeholder="Tenant Email" required /><br>
+                                                    <input type="text" name="number" placeholder="Tenant Phone Number" required /><br>
+                                                    <input type="text" name="username" placeholder="Tenant Username" required /><br>
+                                                    <input type="password" name="password" placeholder="Tenant Password" required /><br>
 
                                                     <input type="submit" name="submit" value="Register" />
                                     </form>
@@ -98,9 +99,10 @@ session_start();
                    }
                   }
                   ?>
-                                                    <input type="text" name="email" placeholder="L-Email" required /><br>
-                                                    <input type="text" name="username" placeholder="L-Username" required /><br>
-                                                    <input type="password" name="password" placeholder="L-Password" required /><br>
+                                                    <input type="text" name="email" placeholder="Landlord Email" required /><br>
+                                                    <input type="text" name="number" placeholder="Landlord Phone Number" required /><br>
+                                                    <input type="text" name="username" placeholder="Landlord Username" required /><br>
+                                                    <input type="password" name="password" placeholder="Landlord Password" required /><br>
 
                                                     <input type="submit" name="submit" value="Register" />
                                     </form>

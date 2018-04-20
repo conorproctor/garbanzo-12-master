@@ -40,6 +40,11 @@ include 'connection.php';
  </style>
 
  <body>
+   <?php
+   if (isset($_SESSION['username'])) {
+     $username = $_SESSION['username'];
+     $users = $mysqli->query("SELECT * FROM users WHERE username='$username'");
+      while ($user_data = $users->fetch_assoc()) { ?>
 
      <!-- Sidebar/menu -->
      <nav class="w3-sidebar w3-black w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
@@ -54,7 +59,7 @@ include 'connection.php';
              <a href="login.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-home"></i>  Home</a>
              <a href="index.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-user"></i>  Profile</a>
              <a href="swiping.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-hand-pointer-o"></i>  Start swiping</a>
-             <a href="tenant-matches.php?user=comer" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-handshake-o"></i>  Your matches</a>
+             <a href="tenant-matches.php?user=<?php echo $user_data['user_id'] ?>" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-handshake-o"></i>  Your matches</a>
              <a href="logout.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><span class="glyphicon glyphicon-log-out"></span> Log out </a>
 
          </div>
@@ -144,7 +149,9 @@ include 'connection.php';
  </form>
  </div>
 
-
+<?php }
+}
+?>
          <script>
              // Script to open and close sidebar
              function w3_open() {

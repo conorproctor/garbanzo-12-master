@@ -79,9 +79,9 @@ if (isset($_GET['user'])) {
       <label>College:</label><br> <input class="form-control" type="text" name="college" value="<?php echo $user_data['college'] ?>" /><br>
       <label>Course:</label><br> <input class="form-control" type="text" name="course" value="<?php echo $user_data['course'] ?>" /><br>
       <label>Year:</label><br> <input class="form-control" type="text" name="year" value="<?php echo $user_data['year'] ?>" /><br>
-      <label>Max distance from college (kms):</label><br> <input type="text" name="distance" value="<?php echo $user_data['distance'] ?>" /><br><br>
+      <label>Max distance from college (kms):</label><br> <input class="form-control" type="text" name="distance" value="<?php echo $user_data['distance'] ?>" /><br><br>
       <h4>House details</h4>
-      <label>Lease length(months):</label><br> <inputclass="form-control"  type="text" name="leaselength" value="<?php echo $user_data['leaselength'] ?>" /><br>
+      <label>Lease length(months):</label><br> <input class="form-control"  type="text" name="leaselength" value="<?php echo $user_data['leaselength'] ?>" /><br>
       <label>Monthly rent:</label><br> <input class="form-control"  type="text" name="rent" value="<?php echo $user_data['rent'] ?>" /><br>
       <label>Deposit:</label><br> <input class="form-control"  type="text" name="deposit" value="<?php echo $user_data['deposit'] ?>" /><br>
       <label>Move in date:</label><br> <input class="form-control" type="text" name="move_in" value="<?php echo $user_data['move_in'] ?>" /><br>

@@ -36,6 +36,7 @@ session_start();?>
     <h1><center>Login</center></h1>
     <center><form method="post" action="login-action.php">
        <br><input type="text" name="email" placeholder="Email" required /><br>
+       <input type="text" name="number" placeholder="Phone Number" required /><br>
        <input type="text" name="username" placeholder = "Username" /><br>
        <input type="password" name="password" placeholder = "Password" /><br>
        <input type="submit" value="Login" /> </form><br>
@@ -76,7 +77,7 @@ session_start();?>
                            <div class="w3-bar-block">
                                <a href="profile.php?user=<?php echo $user_data['username'] ?>" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><span class="fa fa-home"></span>  View Profile</a>
                                <a href="login.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><span class="fa fa-home"></span> Back to dashboard</a>
-                               <a href="matches.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><span class="fa fa-handshake-o"></span>  Your matches</a>
+                               <a href="tenant-matches.php?user=<?php echo $user_data['user_id'] ?>" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><span class="fa fa-handshake-o"></span>  Your matches</a>
                                <a href="logout.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><span class="glyphicon glyphicon-log-out"></span> Log out </a>
 
 

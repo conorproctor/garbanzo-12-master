@@ -42,6 +42,11 @@ session_start();?>
 </div>
 
  <body>
+   <?php
+   if (isset($_SESSION['username'])) {
+     $username = $_SESSION['username'];
+     $users = $mysqli->query("SELECT * FROM landlord WHERE username='$username'");
+      while ($user_data = $users->fetch_assoc()) { ?>
 
      <!-- Sidebar/menu -->
      <nav class="w3-sidebar w3-black w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
@@ -55,7 +60,7 @@ session_start();?>
          <div class="w3-bar-block">
              <a href="#home" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-home"></i>  Home</a>
              <a href="index.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-user"></i>  Profile</a>
-             <a href="matches.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-handshake-o"></i>  Your matches</a>
+             <a href="landlord-matches.php?user=<?php echo $user_data['user_id'] ?>" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><i class="fa fa-handshake-o"></i>  Your matches</a>
              <a href="logout.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-gray"><span class="glyphicon glyphicon-log-out"></span> Log out </a>
 
          </div>
@@ -141,6 +146,9 @@ session_start();?>
    </label>
  </form>
  </div>
+<?php }
+}
+?>
 
 
          <script>

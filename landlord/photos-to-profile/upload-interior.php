@@ -52,7 +52,7 @@
 				$newFileName=$filename.$ext;
 				move_uploaded_file($_FILES["files"]["tmp_name"][$key],"UploadedHouseImages/".$newFileName);
 
-				$query = "INSERT INTO house-images(landlord_id, FilePath, FileName) VALUES('$landlord', 'Upload','".$newFileName."')";
+				$query = "INSERT INTO houseimages(landlord_id, FilePath, FileName) VALUES('$landlord', 'UploadedHouseImages','".$newFileName."')";
 
 				mysqli_query($conn, $query);
 			}

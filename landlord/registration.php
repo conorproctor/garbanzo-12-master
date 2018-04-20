@@ -32,6 +32,7 @@ session_start();
   <center><form method="post" action="landlord-register-action.php">
 
     <input type="text" name="email" placeholder="Email" required /><br>
+    <input type="text" name="number" placeholder="Phone Number" required /><br>
     <input type="text" name="username" placeholder="Username" required /><br>
     <input type="password" name="password" placeholder="Password" required /><br>
 
